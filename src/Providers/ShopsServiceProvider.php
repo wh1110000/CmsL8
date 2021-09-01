@@ -1,6 +1,6 @@
 <?php
 
-namespace wh11100001906\CmsL8\Providers;
+namespace wh1110000\CmsL8\Providers;
 
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 use wh1110000\CmsL8\Providers\AbstractServiceProvider;
