@@ -1,0 +1,588 @@
+form
+{
+    width: 100%;
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='time'],
+    input[type='date'],
+    input[type='number'],
+    select,
+    textarea
+    {
+        display: block;
+        width: 100%;
+        border: 1px solid $mid-grey;
+		box-shadow: inset 2px 4px 8px rgba($light-grey, 0.5);
+        border-radius: 5px;
+		background: #fdfdfd;
+
+		&.short
+		{
+			width: 25%;
+		}
+
+		&:focus
+		{
+			outline: 1px solid $black;
+		}
+    }
+
+	textarea
+	{
+		min-height: 60px;
+		resize: vertical;
+	}
+
+	input[type='text']
+	{
+		&:read-only,
+		&:disabled
+		{
+			box-shadow: inset 2px 4px 8px rgba($mid-grey, 0.5);
+			background: $light-grey;
+		}
+	}
+
+	select
+	{
+		color: $black;
+	}
+
+    .select2-container
+    {
+        max-width: 100%;
+    }
+
+	input[type='time'],
+    input[type='date']
+	{
+		display: inline-block;
+		width: 40%;
+		min-width: 150px;
+	}
+
+    label
+    {
+        display: inline-block;
+        margin: 20px 0 8px;
+        font-weight: $font-weight-bold;
+    }
+
+    > label:first-of-type
+    {
+        margin-top: 0;
+    }
+
+    input[type="file"]
+    {
+        display: block;
+    }
+
+    input.search
+    {
+        padding-right: 38px;
+        background-image: url('../images/form-components/search-black.svg');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 18px 18px;
+    }
+
+    input[type="submit"]
+    {
+        margin-top: .5rem;
+    }
+
+	.input-group
+	{
+		animation: none;
+
+		.prepend
+		{
+			background: $light-grey;
+			color: $dark-grey;
+			padding: $input-btn-padding-y $generic-gutter;
+			border: 1px solid $mid-grey;
+			border-right: 0;
+			border-radius: $generic-radius 0 0 $generic-radius;
+		}
+
+		.append
+		{
+			background: $light-grey;
+			color: $dark-grey;
+			padding: $input-btn-padding-y $generic-gutter;
+			border: 1px solid $mid-grey;
+			border-left: 0;
+			border-radius: 0 $generic-radius $generic-radius 0;
+		}
+
+		input
+		{
+			border-radius: 0 $generic-radius $generic-radius 0;
+		}
+
+		&.dynamic-update
+		{
+			animation: pulse 2s;
+		}
+	}
+
+	.form-seperator
+	{
+		margin: #{$generic-gutter * 2} 0 0 0;
+		height: 1px;
+		background: $dark-grey;
+	}
+
+    .checkbox
+    {
+        input[type="checkbox"] + label
+        {
+            padding: 5px 0 5px 25px;
+            width: auto;
+            height: auto;
+            background: url('../images/form-components/checkbox-unchecked.svg') left 6px no-repeat;
+            background-size: 15px;
+        }
+    }
+
+	.radiobox
+    {
+        input[type="radio"]
+        {
+            display: none;
+
+            + label
+            {
+                display: block;
+                margin: 0;
+                padding: 5px 0 5px 20px;
+                background: url('../images/form-components/radio-unchecked.svg') left center no-repeat;
+                background-size: 14px;
+                font-weight: normal;
+                cursor: pointer;
+                clear: none;
+            }
+
+            &:checked + label,
+            {
+                background-image: url('../images/form-components/radio-checked.svg')
+            }
+        }
+    }
+
+	.field-range
+	{
+		display: flex;
+
+		& > div
+		{
+			margin-right: $generic-gutter;
+			flex-basis: 50%;
+
+			&:last-child
+			{
+				margin-right: 0;
+			}
+		}
+	}
+
+    .switch-group
+    {
+        display: flex;
+
+        label
+        {
+            margin: 0;
+        }
+
+        p
+        {
+            margin-top: 10px;
+            font-size: $font-size-sm;
+            line-height: $line-height-sm;
+        }
+
+        + .switch-group,
+        + h3
+        {
+            margin-top: $xs-section;
+        }
+    }
+
+    .toggle-switch
+    {
+        display: none;
+
+        & + label
+        {
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+            width: 35px;
+            height: 22px;
+            border-radius: $xs-section;
+            background-color: $mid-grey;
+            transition: background 0.2s;
+
+            &:after
+            {
+                content: '';
+                position: absolute;
+                left: 0;
+                padding: 0;
+                height: 22px;
+                width: 22px;
+                border: 3px solid $mid-grey;
+                border-radius: 50%;
+                background-color: #fff;
+                box-sizing: border-box;
+                transition: all 0.2s;
+            }
+
+            & + label
+            {
+                vertical-align: middle;
+                display: inline-block;
+                padding: 0 7px 0 14px;
+                cursor: pointer;
+            }
+        }
+
+        &:checked + label
+        {
+            background-color: $green;
+
+            &:after
+            {
+                left: calc(100% - 22px);
+                border-color: $green;
+                transition: all 0.2s;
+            }
+        }
+
+    	&.danger:checked + label
+    	{
+    		background-color: $red;
+
+    		&:after
+    		{
+    			border-color: $red;
+    		}
+    	}
+    }
+
+    .form-group
+    {
+		clear: both;
+
+		& > label:first-of-type
+		{
+			display: block;
+		}
+
+        + .switch-group
+        {
+            margin-top: $xs-section;
+        }
+
+        + h4
+        {
+            margin: 20px 0 0;
+        }
+
+        label
+        {
+            margin-top: 0;
+        }
+
+
+        &.inline
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+	.form-group-row
+	{
+		display: flex;
+		width: 100%;
+
+		@for $i from 1 through 12
+		{
+			$width: percentage($i / 12);
+
+			.stack-#{$i}
+			{
+				flex-basis: $width;
+
+				[type="date"]
+				{
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.selectable-default
+	{
+		float: right;
+		display: inline-block;
+		font-size: 12px;
+		padding: $text-gutter;
+		margin-top: $text-gutter;
+		margin-bottom: -#{$text-gutter * 2};
+		cursor: pointer;
+
+		&:hover
+		{
+			background: $light-grey;
+			border-radius: $generic-radius;
+		}
+	}
+
+    .button
+    {
+        margin-top: 25px;
+    }
+
+	.error
+	{
+		font-size: 12px;
+		font-weight: $font-weight-bold;
+		color: $red;
+
+		&:first-child
+		{
+			margin-top: -8px; // Offset the above label margin bottom
+		}
+	}
+
+	.label-description
+	{
+		font-size: 14px;
+		margin-bottom: 10px;
+		color: #777;
+	}
+
+	.form-row
+	{
+		label:first-child
+		{
+			display: block;
+			margin: #{$generic-gutter * 2} 0 $generic-gutter 0;
+		}
+
+        .switch-group label
+        {
+            margin: $generic-gutter 0;
+        }
+
+		&:first-of-type
+		{
+			> label
+			{
+				margin-top: 0;
+			}
+		}
+
+		&.has-error
+		{
+			input[type="text"],
+			input[type="email"],
+			input[type="number"],
+			input[type="password"],
+			textarea
+			{
+				border: 1px solid $red;
+			}
+
+			.radio-selector-strip label
+			{
+				border-color: $red;
+			}
+
+			.redactor-layer,
+			.redactor-toolbar
+			{
+				border-color: $red;
+			}
+
+			.checkbox
+			{
+				border: 1px solid $red;
+				padding: $generic-gutter / 2;
+			}
+		}
+
+        + h4
+        {
+            margin-top: $generic-gutter;
+        }
+	}
+}
+
+.toggle-switch
+{
+    display: none;
+
+    & + label
+    {
+        flex: none;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        border-radius: 20px;
+        width: 35px;
+        height: 22px;
+        background: $dark-grey;
+        transition: background 0.2s;
+
+        &:after
+        {
+            content: '';
+            position: absolute;
+            height: 22px;
+            width: 22px;
+            padding: 0;
+            background: #fff;
+            border-radius: 50%;
+            border: 2px solid $dark-grey;
+            box-sizing: border-box;
+            left: 0;
+            transition: all 0.2s;
+        }
+
+        & + label
+        {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 7px 7px 7px 14px;
+			font-weight: normal;
+        }
+    }
+
+    &:checked + label
+    {
+        background: $black;
+
+        &:after
+        {
+            left: calc(100% - 22px);
+            border-color: $black;
+            transition: all 0.2s;
+        }
+    }
+
+	&.danger:checked + label
+	{
+		background: $red;
+
+		&:after
+		{
+			border-color: $red;
+		}
+	}
+}
+
+.checkbox
+{
+	input[type="checkbox"]
+	{
+		display: none;
+
+		+ label
+		{
+			display: block;
+			margin: 0;
+			height: 15px;
+			background: url('../images/form-components/checkbox-unchecked.svg') left center no-repeat;
+			background-size: contain;
+			padding: 0 0 0 25px;
+			font-weight: normal;
+			cursor: pointer;
+			clear: none;
+		}
+
+		&:checked + label
+		{
+			background-image: url('../images/form-components/checkbox-checked.svg');
+		}
+
+		&:disabled + label
+		{
+			background-image: url('../images/form-components/checkbox-disabled.svg');
+			color: $dark-grey;
+		}
+	}
+}
+
+.form-control
+{
+    border-color: $mid-grey;
+}
+
+@keyframes pulse
+{
+	0%   { filter: drop-shadow(0 0 0px rgba(#00e06e, 1)); }
+	70%  { filter: drop-shadow(0 0 10px rgba(#00e06e, 0)); }
+	100% { filter: drop-shadow(0 0 10px rgba(#00e06e, 0)); }
+}
+
+@include mobile
+{
+    form
+    {
+        input[type='text'],
+        input[type='email'],
+        input[type='password'],
+        input[type='time'],
+        input[type='date'],
+        select,
+        textarea
+        {
+            &.short
+            {
+                width: 100%;
+            }
+        }
+
+        input[type='time'],
+        input[type='date']
+        {
+            width: 100%;
+        }
+
+        .switch-group
+        {
+            font-size: $font-size-sm;
+        }
+
+        .form-group-row
+        {
+            flex-wrap: wrap;
+
+            .form-group
+            {
+                flex-basis: 100%;
+            }
+        }
+
+        .form-row
+        {
+            label:first-child
+            {
+                margin: $generic-gutter 0;
+            }
+
+            .switch-group label
+            {
+                margin: 5px 0;
+            }
+        }
+    }
+}

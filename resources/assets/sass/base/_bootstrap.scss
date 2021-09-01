@@ -1,0 +1,62 @@
+// Load Bootstrap variables and mixins
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Load project variables
+@import "../base/variables";
+
+// Set the overriding variables
+
+// Colours
+
+$primary:                          $black;
+
+$theme-colors: (
+  primary: $primary
+);
+
+$yiq-contrasted-threshold:         200;
+
+// Links
+
+$link-color:                       $primary;
+$link-hover-color:                 darken($link-color, 25%);
+
+// Fonts
+
+$font-size-base:                   .875rem;
+$font-size-lg:                     ($font-size-base * 1.25);
+$font-size-sm:                     ($font-size-base * .875);
+
+$font-weight-bold:                 500;
+
+// Buttons/Forms
+
+$input-btn-padding-y:              .35rem;
+$input-btn-line-height:            1;
+$input-btn-line-height-sm:         1;
+
+$btn-padding-x:                    $input-btn-padding-x * 1.25;
+$btn-padding-y:                    $input-btn-padding-y;
+
+$input-padding-y:                  $input-btn-padding-y;
+
+// Pagination
+
+$pagination-padding-y:             .5rem;
+$pagination-padding-x:             .5rem;
+$pagination-line-height:           1.25;
+
+$pagination-color:                 $black;
+$pagination-bg:                    $light-grey;
+
+$pagination-hover-color:           $black;
+$pagination-hover-bg:              $mid-grey;
+
+$pagination-active-bg:             $dark-grey;
+
+$pagination-disabled-color:        $dark-grey;
+$pagination-disabled-bg:           $light-grey;
+
+@import "bootstrap/bootstrap";

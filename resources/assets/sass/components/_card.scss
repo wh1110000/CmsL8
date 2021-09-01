@@ -1,0 +1,52 @@
+.card
+{
+    border-radius: 0;
+
+    .card-header
+    {
+        &:first-child
+        {
+            border-radius: 0;
+        }
+
+        + .card-footer
+        {
+            border-top: 0;
+        }
+    }
+
+    .list-group-item
+    {
+        border: 0;
+    }
+
+    .preview + hr + .card-body
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+form
+{
+    .card
+    {
+        > hr
+        {
+            margin: 0;
+        }
+    }
+}
+
+// MEDIA QUERIES
+
+@include tabletPortrait
+{
+    .card
+    {
+        .card-body
+        {
+            padding: $generic-gutter;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.btn
+{
+    @include button-variant($dark-grey, $dark-grey);
+
+    &.btn-sm
+    {
+        @include plain-btn;
+    }
+}
+
+table,
+.buttons-sm
+{
+    .btn
+    {
+        @include plain-btn;
+        margin-right: 8px;
+
+        &.btn-danger
+        {
+            color: $red;
+
+            &:focus,
+            &:hover,
+            &:active,
+            &:active:focus
+            {
+                color: $red;
+
+                &:not(:disabled):not(.disabled)
+                {
+                    color: $red;
+                }
+            }
+        }
+
+        &:last-child
+        {
+            margin-right: 0;
+        }
+    }
+}
+
+.ladda-button
+{
+    @extend .btn;
+}

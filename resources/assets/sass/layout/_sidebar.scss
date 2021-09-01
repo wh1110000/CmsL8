@@ -1,0 +1,134 @@
+.side-navbar
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: $header-height;
+    width: 200px;
+    height: 100%;
+    border-right: 1px solid $mid-grey;
+    overflow-y: auto;
+    z-index: 2;
+
+    .sidebar-menu-close
+    {
+        display: none;
+        position: absolute;
+        top: $generic-gutter;
+        right: $generic-gutter;
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/icons/close-black.svg');
+        @include background-contain;
+        font-size: 0;
+        line-height: 0;
+        cursor: pointer;
+    }
+
+    ul
+    {
+        li
+        {
+            a
+            {
+                display: block;
+                padding: 10px 15px;
+
+                &:hover
+                {
+                    background-color: $light-grey;
+                    text-decoration: none;
+                }
+
+                &[data-toggle=collapse]
+                {
+                    position: relative;
+
+                    &::before
+                    {
+                        content: '\f078';
+                        display: inline-block;
+                        position: absolute;
+                        top: 50%;
+                        right: $generic-gutter;
+                        transform: translateY(-50%);
+                        font-family: Font Awesome\ 5 Free, sans-serif;
+                        font-weight: 700;
+                    }
+
+                    &[aria-expanded=true]
+                    {
+                        background-color: $mid-grey;
+
+                        &::before
+                        {
+                            content: '\f077';
+                        }
+                    }
+                }
+            }
+
+            ul
+            {
+                li
+                {
+                     a
+                     {
+                         padding-left: 30px;
+                         background-color: $light-grey;
+
+                         &:hover
+                         {
+                             background-color: darken($light-grey, 5%);
+                             text-decoration: none;
+                         }
+                     }
+                }
+            }
+
+            &:first-child
+            {
+                .sidenav-heading
+                {
+                    margin: 0;
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    .sidenav-heading
+    {
+        margin: 0;
+        padding: $generic-gutter;
+        border-top: 1px solid $mid-grey;
+    }
+}
+
+// MEDIA QUERIES
+
+@include mobile
+{
+    .side-navbar
+    {
+        padding: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 200;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0s 0.4s, opacity 0.4s;
+
+        .sidebar-menu-close
+        {
+            display: inline-block;
+        }
+
+        &.open
+        {
+            opacity: 1;
+            visibility: visible;
+            transition: visibility 0s, opacity 0.4s;
+        }
+    }
+}

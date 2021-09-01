@@ -1,0 +1,74 @@
+.media-card
+{
+    display: block;
+    width: 100%;
+    border: 1px solid $mid-grey;
+
+    .header
+    {
+        padding: 10px 15px;
+        word-wrap: break-word;
+    }
+
+    .footer
+    {
+        padding: 10px 15px;
+        border-top: 1px solid $mid-grey;
+        background-color: $light-grey;
+    }
+
+    .buttons-sm
+    {
+        margin-bottom: $generic-gutter;
+    }
+
+    .detail
+    {
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: space-between;
+        margin: -5px;
+
+        .badge
+        {
+            margin: 5px;
+            background-color: $dark-grey;
+            color: #fff;
+        }
+
+        .icons
+        {
+            display: flex;
+            color: $dark-grey;
+
+            i
+            {
+                margin: 5px;
+            }
+        }
+    }
+}
+
+.product-chooser
+{
+    max-height: 70vh;
+    overflow-y: auto;
+
+    .product-chooser-item
+    {
+        cursor: pointer;
+        transition: all 0.2s;
+
+        input[type="radio"]
+        {
+            display: none;
+        }
+
+        &.selected
+        {
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 0, 0, 0.1);
+            background-color: $light-grey;
+        }
+    }
+}

@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
+
+body
+{
+    font-family: 'Rubik', sans-serif;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+{
+    margin-top: 0;
+    font-weight: $font-weight-bold;
+}
+
+h4,
+h5
+{
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+h1
+{
+    margin-bottom: $sm-section;
+    font-size: 1.375rem;
+}
+
+h2
+{
+    margin-bottom: $xs-section;
+    font-size: 1.125rem;
+}
+
+h3
+{
+    margin-bottom: $xs-section;
+    font-size: 1rem;
+}
+
+h4
+{
+    margin-bottom: $generic-gutter;
+    font-size: 0.875rem;
+}
+
+h5
+{
+    margin-bottom: $generic-gutter;
+    font-size: 0.75rem;
+}
+
+p
+{
+    margin: 0 0 $xs-section;
+
+    &:last-child
+    {
+        margin: 0;
+    }
+}
+
+a
+{
+    i
+    {
+        margin-right: 3px;
+    }
+}
+
+.fa-fw
+{
+    width: 1.5em;
+}
+
+.page
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding:($header-height + $sm-section) $sm-section $sm-section;
+    width: calc(100% - 200px);
+    min-height: 100%;
+    background-color: $lightest-grey;
+
+    main
+    {
+        padding: $sm-section;
+        max-width: 1440px;
+        background: #fff;
+    }
+}
+
+.badge
+{
+    font-weight: $font-weight-bold;
+}
+
+.alert
+{
+    padding: $generic-gutter;
+
+    h2,
+    h3,
+    h4,
+    {
+        margin-bottom: 15px;
+    }
+
+    p
+    {
+        margin-bottom: 10px;
+
+        &:last-child 
+        {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// MEDIA QUERIES
+
+@include tabletLandscape
+{
+    .page
+    {
+        padding:($header-height + $xs-section) $xs-section $xs-section;
+
+        main
+        {
+            padding: $xs-section;
+        }
+    }
+}
+
+@include tabletPortrait
+{
+    h1
+    {
+        margin-bottom: 20px;
+    }
+}
+
+@include mobile
+{
+    .page
+    {
+        position: relative;
+        padding: $header-height 0 0;
+        width: 100%;
+        min-height: auto;
+
+        main
+        {
+            padding: $generic-gutter;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "name": "11100001906/Core",
+    "description": "Cms",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Workhouse Marketing",
+            "email": "dev@workhousemarketing.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src\\app\\Helpers\\Functions.php"
+
+        ],
+        "psr-4": {
+            "Workhouse\\Core\\": "src/"
+        }
+    },
+    "require": {
+        "11100001906/administrators": "dev-master",
+        "11100001906/components": "dev-master",
+        "11100001906/permissions": "dev-master",
+        "11100001906/multilanguage": "dev-master",
+        "11100001906/seo": "dev-master",
+        "11100001906/settings": "dev-master",
+        "11100001906/socialMedia": "dev-master",
+        "albertcht/invisible-recaptcha": "^1.9",
+        "cviebrock/eloquent-sluggable" : "^7.0",
+        "davejamesmiller/laravel-breadcrumbs": "5.x",
+        "doctrine/inflector": "^2.0",
+        "intervention/image": "^2.5",
+        "laravelcollective/html": "^6.1",
+        "laravel/ui": "^2.0",
+        "realrashid/sweet-alert": "^3.1.3",
+        "romulinux/favicon-generator": ">=1.0.8",
+        "spatie/laravel-menu" : "^3.5",
+        "spatie/laravel-permission" : "3.11",
+        "spatie/laravel-searchable": "^1.6",
+        "spatie/laravel-sitemap" : "^5.7"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "wh11100001906\\SocialMedia\\Providers\\SocialMediaServiceProvider",
+                "wh11100001906\\Shops\\Providers\\ShopsServiceProvider",
+                "wh11100001906\\Settings\\Providers\\SettingsServiceProvider",
+                "wh11100001906\\Seo\\Providers\\SeoServiceProvider",
+                "wh11100001906\\Products\\Providers\\ProductsServiceProvider",
+                "Workhouse\\Permissions\\Providers\\PermissionsServiceProvider",
+                "Spatie\\Permission\\PermissionServiceProvider",
+                "Workhouse\\Pages\\Providers\\PagesServiceProvider",
+                "Workhouse\\Multilanguage\\Providers\\MultilanguageServiceProvider",
+                "Workhouse\\Multilanguage\\Providers\\TranslationServiceProvider",
+                "Workhouse\\Media\\Providers\\MediaServiceProvider",
+                "Workhouse\\Administrators\\Providers\\AuthServiceProvider",
+                "Workhouse\\Administrators\\Providers\\AdministratorsServiceProvider",
+                "Workhouse\\Archives\\Providers\\ArchivesServiceProvider",
+                "Workhouse\\Cms\\Providers\\CmsServiceProvider",
+                "Workhouse\\Components\\Providers\\ComponentsServiceProvider",
+                "Workhouse\\Components\\Providers\\HelpersServiceProvider",
+                "Workhouse\\Components\\Providers\\HtmlServiceProvider",
+                "Workhouse\\Components\\Providers\\SweetAlertServiceProvider",
+                "AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider",
+                "Workhouse\\Contact\\Providers\\ContactServiceProvider"
+            ],
+            "aliases": {
+                "Button": "Workhouse\\Components\\Facades\\Button",
+                "DataTable": "Workhouse\\Components\\Facades\\DataTable",
+                "Fields": "Workhouse\\Components\\Facades\\Fields",
+                "Navigation": "Workhouse\\Components\\Facades\\Navigation",
+                "Row": "Workhouse\\Components\\Facades\\Row",
+                "Form": "Workhouse\\Components\\Facades\\Form",
+                "Html": "Workhouse\\Components\\Facades\\Html"
+            },
+            "dont-discover": [
+                "laravelcollective/html"
+            ]
+        }
+    }
+}

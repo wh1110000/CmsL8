@@ -1,0 +1,168 @@
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+    border-bottom: 1px solid $mid-grey;
+    background-color: #fff;
+    z-index: 3;
+
+    .logo
+    {
+        width: auto;
+        margin: 12px 15px;
+        height: 25px;
+    }
+
+    nav
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    ul
+    {
+        display: flex;
+        @include ul-styles;
+
+        li
+        {
+            margin-left: $xs-section;
+
+            a
+            {
+                &:hover
+                {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .sidebar-menu-btn
+    {
+        display: none;
+        margin-left: $generic-gutter;
+        width: 25px;
+        height: 25px;
+        background-image: url('../images/icons/mobile-menu-black.svg');
+        @include background-contain;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    .user-menu
+    {
+        position: relative;
+
+        .user-name
+        {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            @include no-line;
+
+            .initial
+            {
+                margin-right: 10px;
+            }
+
+            &::after
+            {
+                content: '\f078';
+                display: inline-block;
+                margin-left: 10px;
+                font-family: "Font Awesome 5 Pro";
+                font-weight: 700;
+                line-height: 0;
+            }
+
+            &[aria-expanded="true"]
+            {
+                &::after
+                {
+                    content: '\f077';
+                }
+            }
+        }
+    }
+
+    form
+    {
+        display: none;
+    }
+}
+
+.initial
+{
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 50%;
+    background-color: $dark-grey;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+}
+
+// MEDIA QUERIES
+
+@include mobile
+{
+    header
+    {
+        padding: 12px 15px;
+
+        .logo-wrapper
+        {
+            margin-right: auto;
+        }
+
+        .logo
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar-menu-btn
+        {
+            display: inline-block;
+        }
+
+        .user-menu
+        {
+            position: static;
+
+            .user-name
+            {
+                padding: 0;
+                font-size: 0;
+                line-height: 0;
+
+                .initial
+                {
+                    margin: 0 0 0 15px;
+                    font-size: $font-size-base;
+                    line-height: 25px;
+                }
+
+                &::after
+                {
+                    display: none;
+                }
+            }
+
+            .dropdown
+            {
+                position: static;
+            }
+
+            .dropdown-menu
+            {
+                width: 100%;
+            }
+        }
+    }
+}

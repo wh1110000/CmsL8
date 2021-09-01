@@ -1,0 +1,120 @@
+.radio-selector-strip
+{
+	font-size: 0;
+	display: inline-block;
+	background: #fdfdfd;
+	box-shadow: inset 2px 4px 8px rgba($light-grey, 0.5);
+	border-radius: $generic-radius;
+
+	label
+	{
+		display: inline-block;
+		border: 1px solid #e6e6e6;
+		border-right: 0;
+		padding: 10px 15px;
+		margin: 0 !important;
+		font-size: $font-size-sm;
+		font-weight: normal;
+		cursor: pointer;
+
+		&:hover
+		{
+			background: #f2f2f2;
+		}
+
+		&:last-child
+		{
+			border-right: 1px solid #e6e6e6;
+			border-radius: 0 5px 5px 0;
+		}
+
+		&:first-of-type
+		{
+			border-radius: 5px 0 0 5px;
+		}
+
+		&.colour-swatch
+		{
+			width: auto;
+			padding: 8px;
+
+			div
+			{
+				width: 40px;
+				height: 15px;
+				border: 1px solid #fff;
+			}
+		}
+	}
+
+	input[type="radio"],
+	input[type="checkbox"]
+	{
+		display: none;
+
+		&:checked + label
+		{
+			background: $green;
+			color: #fff;
+		}
+
+		&:disabled
+		{
+			&:not(:checked) + label
+			{
+				display: none;
+			}
+		}
+	}
+}
+
+.link-selector-strip
+{
+	display: inline-block;
+	margin-bottom: $xs-section;
+	font-size: 0;
+	background: #fdfdfd;
+	box-shadow: inset 2px 4px 8px rgba($light-grey, 0.5);
+	border-radius: $generic-radius;
+
+	a
+	{
+		display: inline-block;
+		border: 1px solid #e6e6e6;
+		border-right: 0;
+		padding: 10px 15px;
+		font-size: $font-size-sm;
+		font-weight: normal;
+		text-decoration: none;
+		color: $black;
+
+		&:hover
+		{
+			background: #f2f2f2;
+		}
+
+		&:last-child
+		{
+			border-right: 1px solid #e6e6e6;
+			border-radius: 0 5px 5px 0;
+		}
+
+		&:first-of-type
+		{
+			border-radius: 5px 0 0 5px;
+		}
+
+		&.selected
+		{
+			background: $green;
+			color: #fff;
+		}
+	}
+
+	label
+	{
+		padding: 10px 15px;
+		font-size: $font-size-sm;
+		color: grey;
+	}
+}

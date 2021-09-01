@@ -1,0 +1,28 @@
+{
+    "name": "11100001906/Archives",
+    "description": "Archives",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Workhouse Marketing",
+            "email": "dev@workhousemarketing.com"
+        }
+    ],
+    "require": {
+        "11100001906/cms": "dev-master",
+        "11100001906/pages": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Workhouse\\Archives\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workhouse\\Archives\\Providers\\ArchivesServiceProvider"
+            ]
+        }
+    }
+}

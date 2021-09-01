@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class Create{{pivotTableController}}Table extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+
+	public function up() {
+
+		if(!Schema::hasTable('{{pivotTable}}')) {
+
+			Schema::create( '{{pivotTable}}', function ( Blueprint $table ) {
+				$table->increments( 'id' );
+				$table->integer( '{{name}}_id' );
+				$table->integer( '{{name}}_category_id');
+
+			} );
+		}
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+
+	public function down() {
+
+		Schema::drop('{{pivotTable}}');
+	}
+}

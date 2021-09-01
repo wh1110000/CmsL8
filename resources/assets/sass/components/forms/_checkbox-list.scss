@@ -1,0 +1,59 @@
+.checkbox-list
+{
+	display: flex;
+	font-size: $font-size-sm;
+	margin: $generic-gutter #{-$generic-gutter / 2};
+
+	.column
+	{
+		flex: 1;
+		border: 1px solid $mid-grey;
+		border-radius: $generic-radius;
+		margin: 0 #{$generic-gutter / 2};
+	}
+
+	.title
+	{
+		background: $mid-grey;
+		font-weight: $font-weight-bold;
+		padding: $text-gutter;
+	}
+
+	label
+	{
+		font-weight: normal;
+	}
+
+	.form-row
+	{
+		padding: 0 4px;
+		margin: 0;
+	}
+
+	input[type="checkbox"]
+	{
+		display: none;
+
+	    & + label
+	    {
+	        padding: $text-gutter 0 $text-gutter 25px;
+	        width: auto;
+	        height: auto;
+	        background: url('../images/form-components/checkbox-unchecked.svg') left center no-repeat;
+	        background-size: 15px;
+			line-height: 1;
+			margin: 0;
+	    }
+
+		&:checked + label
+		{
+			background-image: url('../images/form-components/checkbox-checked.svg');
+		}
+
+		&:disabled + label
+		{
+			background-image: url('../images/form-components/checkbox-disabled.svg');
+			color: $dark-grey;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+// Base
+@import "base/bootstrap";
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/media-queries';
+@import 'base/general';
+
+// Components
+@import 'components/button';
+@import 'components/forms';
+@import 'components/card';
+
+html,
+body
+{
+    height: 100%;
+}
+
+body
+{
+    display: flex;
+    align-items: center;
+}
+
+.container
+{
+    padding: ($generic-gutter * 2);
+}
+
+// MEDIA QUERIES
+
+@include mobile
+{
+    .container
+    {
+        padding: $generic-gutter;
+    }
+}

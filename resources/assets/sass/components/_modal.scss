@@ -1,0 +1,51 @@
+.modal
+{
+    .modal-header
+    {
+        padding: $generic-gutter;
+
+        .close
+        {
+            margin: (-$generic-gutter) (-$generic-gutter) (-$generic-gutter) auto;
+            padding: $generic-gutter;
+        }
+    }
+
+    .modal-body
+    {
+        padding: $sm-section;
+    }
+
+    .modal-footer
+    {
+        padding: $generic-gutter;
+    }
+
+    div.dataTables_wrapper
+    {
+        margin: -10px;
+        width: calc(100% + 20px);
+
+        .dataTable
+        {
+            margin-top: 0 !important;
+        }
+    }
+}
+
+@include mobile
+{
+    .modal
+    {
+        .modal-body
+        {
+            padding: $generic-gutter;
+        }
+        
+        div.dataTables_wrapper
+        {
+            margin: -8px;
+            width: calc(100% + 16px);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<?php
+
+return [
+	'filters' => [
+		'archive' => true,
+		'category' => true,
+		'country' => false
+	]
+];

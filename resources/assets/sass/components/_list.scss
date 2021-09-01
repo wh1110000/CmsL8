@@ -1,0 +1,30 @@
+.block-list
+{
+    @include ul-styles;
+
+    li
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        background-color: $light-grey;
+
+        .title
+        {
+            margin: 5px 15px 5px 5px;
+            display: inline-block;
+        }
+
+        .buttons-sm
+        {
+            margin: 5px;
+        }
+
+        + li
+        {
+            margin-top: 8px;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.nav-tabs
+{
+    .nav-link
+    {
+        padding: 8px 18px;
+    }
+}
+
+.tab-content
+{
+    padding-top: $xs-section;
+}
+
+// MEDIA QUERIES
+
+@include tabletPortrait
+{
+    .nav-tabs
+    {
+        .nav-link
+        {
+            padding: 5px 15px;
+        }
+    }
+}
+
+@include mobileSm
+{
+    .nav-tabs
+    {
+        .nav-link
+        {
+            padding: 4px 10px;
+        }
+    }
+}
