@@ -2,7 +2,7 @@
 
 namespace wh1110000\CmsL8\Models\Presenters;
 
-use wh1110000\CmsL8\Repositories\Admin\ArchiveCategoryRepository;
+use wh1110000\CmsL8\Http\Repositories\Admin\ArchiveCategoryRepository;
 use wh1110000\CmsL8\Models\Archive as BaseModel;
 
 /**

@@ -2,7 +2,7 @@
 
 namespace wh1110000\CmsL8\Http\Middleware;
 
-use wh1110000\CmsL8\Repositories\BaseWebRepository;
+use wh1110000\CmsL8\Http\Repositories\BaseWebRepository;
 use wh1110000\CmsL8\Services\Route;
 
 /**
