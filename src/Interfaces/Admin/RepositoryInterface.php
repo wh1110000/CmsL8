@@ -1,6 +1,6 @@
 <?php
 
-namespace wh1110000\CmsL8\Admin\Interfaces;
+namespace wh1110000\CmsL8\Interfaces\Admin;
 
 /**
  * Interface GeneralRepositoryInterface

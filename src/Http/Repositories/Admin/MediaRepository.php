@@ -1,6 +1,6 @@
 <?php
 
-namespace wh1110000\CmsL8\Repositories\Admin;
+namespace wh1110000\CmsL8\Http\Repositories\Admin;
 
 use Illuminate\Support\Facades\Storage;
 use wh1110000\CmsL8\Http\Repositories\AdminRepository;

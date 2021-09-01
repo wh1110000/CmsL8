@@ -4,7 +4,7 @@ namespace wh1110000\CmsL8\Providers;
 
 use wh1110000\CmsL8\Http\Middleware\Cache;
 use wh1110000\CmsL8\Http\Middleware\CookiePolicyDenied;
-use wh1110000\CmsL8\Repositories\BaseWebRepository;
+use wh1110000\CmsL8\Http\Repositories\BaseWebRepository;
 use wh1110000\CmsL8\Providers\AbstractServiceProvider;
 use wh1110000\CmsL8\Services\Route;
 
