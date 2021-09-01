@@ -4,7 +4,7 @@ $package = 'product';
 
 Route::as('product.')->group(function() use ($package) {
 
-	$prefix = \Workhouse\Core\Services\Route::getWebRouteSlubByName($package, 'index');
+	$prefix = \wh1110000\CmsL8\Services\Route::getWebRouteSlubByName($package, 'index');
 
 
 	Route::prefix($prefix)->group(function() {
@@ -15,7 +15,7 @@ Route::as('product.')->group(function() use ($package) {
 		]);
 	});
 
-	$prefix = \Workhouse\Core\Services\Route::getWebRouteSlubByName($package, 'product');
+	$prefix = \wh1110000\CmsL8\Services\Route::getWebRouteSlubByName($package, 'product');
 
 	Route::prefix($prefix)->group(function() {
 

@@ -4,7 +4,7 @@ Route::as('shop.')->group(function() {
 
 	$package = 'shop';
 
-	$prefix = \Workhouse\Core\Services\Route::getWebRouteSlubByName($package, 'categories');
+	$prefix = \wh1110000\CmsL8\Services\Route::getWebRouteSlubByName($package, 'categories');
 
 	Route::prefix($prefix)->group(function() {
 
@@ -14,7 +14,7 @@ Route::as('shop.')->group(function() {
 		]);
 	});
 
-	if($prefix = \Workhouse\Core\Services\Route::getWebRouteSlubByName($package, 'map')){
+	if($prefix = \wh1110000\CmsL8\Services\Route::getWebRouteSlubByName($package, 'map')){
 
 		Route::prefix($prefix)->group(function() {
 
@@ -25,7 +25,7 @@ Route::as('shop.')->group(function() {
 		});
 	}
 
-	if($prefix = \Workhouse\Core\Services\Route::getWebRouteSlubByName($package, 'category')){
+	if($prefix = \wh1110000\CmsL8\Services\Route::getWebRouteSlubByName($package, 'category')){
 
 		Route::prefix($prefix)->group(function() {
 
@@ -36,7 +36,7 @@ Route::as('shop.')->group(function() {
 		});
 	}
 
-	if($prefix = \Workhouse\Core\Services\Route::getWebRouteSlubByName($package, 'shop')){
+	if($prefix = \wh1110000\CmsL8\Services\Route::getWebRouteSlubByName($package, 'shop')){
 
 		Route::prefix($prefix)->group(function() {
 

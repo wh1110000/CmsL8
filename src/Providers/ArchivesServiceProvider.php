@@ -7,7 +7,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;
-use wh1110001906\Core\Console\Install;
+use wh1110000\CmsL8\Console\Install;
 use Doctrine\Inflector\Rules\Patterns;
 use Doctrine\Inflector\Rules\Ruleset;
 use Doctrine\Inflector\Rules\Substitution;

@@ -2,7 +2,7 @@
 
 Route::as('contact.')->group(function () {
 
-	$prefix = \Workhouse\Core\Services\Route::getWebRouteSlubByName('contact', 'index');
+	$prefix = \wh1110000\CmsL8\Services\Route::getWebRouteSlubByName('contact', 'index');
 
 	Route::prefix($prefix)->group(function() {
 

@@ -1,6 +1,6 @@
 <?php
 
-foreach(\Workhouse\Archives\Providers\ArchivesServiceProvider::getWebRoutes()['archive'] ?? [] as $archives){
+foreach(\wh1110000\CmsL8\Providers\ArchivesServiceProvider::getWebRoutes()['archive'] ?? [] as $archives){
 
 	foreach($archives as $model => $slug){
 
@@ -16,7 +16,7 @@ foreach(\Workhouse\Archives\Providers\ArchivesServiceProvider::getWebRoutes()['a
 	}
 }
 
-foreach(\Workhouse\Archives\Providers\ArchivesServiceProvider::getWebRoutes()['post'] ?? [] as $posts){
+foreach(\wh1110000\CmsL8\Providers\ArchivesServiceProvider::getWebRoutes()['post'] ?? [] as $posts){
 
 	foreach($posts as $model => $slug){
 

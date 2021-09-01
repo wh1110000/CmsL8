@@ -5,8 +5,8 @@ namespace wh1110000\CmsL8\Providers;
 use wh1110000\CmsL8\Providers\AbstractServiceProvider;
 use wh1110000\CmsL8\Services\Route;
 use wh1110000\CmsL8\Services\Router;
-use wh1110000\CmsL8\Middleware\Authenticate;
-use wh1110000\CmsL8\Middleware\Guard;
+use wh1110000\CmsL8\Http\Middleware\Authenticate;
+use wh1110000\CmsL8\Http\Middleware\Guard;
 use wh1110000\CmsL8\Models\Permission;
 use wh1110000\CmsL8\Models\Role;
 

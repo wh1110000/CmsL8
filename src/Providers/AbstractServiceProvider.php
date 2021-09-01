@@ -120,7 +120,7 @@ abstract class AbstractServiceProvider extends ServiceProvider {
 			//$this->divider = '\\';
 		}
 
-		$this->dir = Str::beforeLast($dirname, $this->divider.'app'.$this->divider);
+		$this->dir = Str::beforeLast($dirname, $this->divider.'src'.$this->divider);
 
 		$this->namespace = Str::beforeLast($reflector->getNamespaceName(), '\\Providers');
 
@@ -312,7 +312,8 @@ abstract class AbstractServiceProvider extends ServiceProvider {
 		
 		if(is_null($path)){
 
-			$path = $this->dir('/app/Models');
+			$path = $this->dir('src/Models');
+
 		}
 
 		$out = [];
@@ -384,7 +385,7 @@ abstract class AbstractServiceProvider extends ServiceProvider {
 			foreach ( $adminFiles as $file ) {
 
 				Route::middleware( [ 'web', 'auth:administrator' ] )
-				     ->namespace( $this->namespace . '\Controllers\Admin' )
+				     ->namespace( $this->namespace . '\Http\Controllers\Admin' )
 				     //->prefix( 'admin' )
 				     ->prefix( self::getLocalePrefix('admin') )
 				     ->as( 'admin.' )
@@ -401,7 +402,7 @@ abstract class AbstractServiceProvider extends ServiceProvider {
 			foreach ( $websiteFiles as $file ) {
 
 				Route::middleware('web')
-					->namespace( $this->namespace . '\Controllers\Website' )
+					->namespace( $this->namespace . '\Http\Controllers\Website' )
 				     ->prefix( self::getLocalePrefix() )
 				     ->group( $file->getRealPath() );
 			}

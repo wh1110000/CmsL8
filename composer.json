@@ -58,13 +58,13 @@
                 "Spatie\\Permission\\PermissionServiceProvider"
             ],
             "aliases": {
-                "Button": "wh1110000\\CmsL8\\View\\Components\\Facades\\Button",
-                "DataTable": "wh1110000\\CmsL8\\View\\Components\\Facades\\DataTable",
-                "Fields": "wh1110000\\CmsL8\\View\\Components\\Facades\\Fields",
-                "Navigation": "wh1110000\\CmsL8\\View\\Components\\Facades\\Navigation",
-                "Row": "wh1110000\\CmsL8\\View\\Components\\Facades\\Row",
-                "Form": "wh1110000\\CmsL8\\View\\Components\\Facades\\Form",
-                "Html": "wh1110000\\CmsL8\\View\\Components\\Facades\\Html"
+                "Button": "wh1110000\\CmsL8\\Facades\\Button",
+                "DataTable": "wh1110000\\CmsL8\\Facades\\DataTable",
+                "Fields": "wh1110000\\CmsL8\\Facades\\Fields",
+                "Navigation": "wh1110000\\CmsL8\\Facades\\Navigation",
+                "Row": "wh1110000\\CmsL8\\Facades\\Row",
+                "Form": "wh1110000\\CmsL8\\Facades\\Form",
+                "Html": "wh1110000\\CmsL8\\Facades\\Html"
             },
             "dont-discover": [
                 "laravelcollective/html"
