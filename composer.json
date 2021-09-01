@@ -1,5 +1,5 @@
 {
-    "name": "11100001906/Core",
+    "name": "wh1110000/CmsL8",
     "description": "Cms",
     "type": "library",
     "license": "MIT",
@@ -11,21 +11,14 @@
     ],
     "autoload": {
         "files": [
-            "src\\app\\Helpers\\Functions.php"
+            "Helpers\\Functions.php"
 
         ],
         "psr-4": {
-            "Workhouse\\Core\\": "src/"
+            "wh1110000\\CmsL8\\": "src/"
         }
     },
     "require": {
-        "11100001906/administrators": "dev-master",
-        "11100001906/components": "dev-master",
-        "11100001906/permissions": "dev-master",
-        "11100001906/multilanguage": "dev-master",
-        "11100001906/seo": "dev-master",
-        "11100001906/settings": "dev-master",
-        "11100001906/socialMedia": "dev-master",
         "albertcht/invisible-recaptcha": "^1.9",
         "cviebrock/eloquent-sluggable" : "^7.0",
         "davejamesmiller/laravel-breadcrumbs": "5.x",
@@ -43,36 +36,36 @@
     "extra": {
         "laravel": {
             "providers": [
-                "wh11100001906\\SocialMedia\\Providers\\SocialMediaServiceProvider",
-                "wh11100001906\\Shops\\Providers\\ShopsServiceProvider",
-                "wh11100001906\\Settings\\Providers\\SettingsServiceProvider",
-                "wh11100001906\\Seo\\Providers\\SeoServiceProvider",
-                "wh11100001906\\Products\\Providers\\ProductsServiceProvider",
-                "Workhouse\\Permissions\\Providers\\PermissionsServiceProvider",
-                "Spatie\\Permission\\PermissionServiceProvider",
-                "Workhouse\\Pages\\Providers\\PagesServiceProvider",
-                "Workhouse\\Multilanguage\\Providers\\MultilanguageServiceProvider",
-                "Workhouse\\Multilanguage\\Providers\\TranslationServiceProvider",
-                "Workhouse\\Media\\Providers\\MediaServiceProvider",
-                "Workhouse\\Administrators\\Providers\\AuthServiceProvider",
-                "Workhouse\\Administrators\\Providers\\AdministratorsServiceProvider",
-                "Workhouse\\Archives\\Providers\\ArchivesServiceProvider",
-                "Workhouse\\Cms\\Providers\\CmsServiceProvider",
-                "Workhouse\\Components\\Providers\\ComponentsServiceProvider",
-                "Workhouse\\Components\\Providers\\HelpersServiceProvider",
-                "Workhouse\\Components\\Providers\\HtmlServiceProvider",
-                "Workhouse\\Components\\Providers\\SweetAlertServiceProvider",
+                "wh1110000\\Core\\Providers\\SocialMediaServiceProvider",
+                "wh1110000\\Core\\Providers\\ShopsServiceProvider",
+                "wh1110000\\Core\\Providers\\SettingsServiceProvider",
+                "wh1110000\\Core\\Providers\\SeoServiceProvider",
+                "wh1110000\\Core\\Providers\\ProductsServiceProvider",
+                "wh1110000\\Core\\Providers\\PermissionsServiceProvider",
+                "wh1110000\\Core\\Providers\\PagesServiceProvider",
+                "wh1110000\\Core\\Providers\\MultilanguageServiceProvider",
+                "wh1110000\\Core\\Providers\\TranslationServiceProvider",
+                "wh1110000\\Core\\Providers\\MediaServiceProvider",
+                "wh1110000\\Core\\Providers\\AuthServiceProvider",
+                "wh1110000\\Core\\Providers\\AdministratorsServiceProvider",
+                "wh1110000\\Core\\Providers\\ArchivesServiceProvider",
+                "wh1110000\\Core\\Providers\\CmsServiceProvider",
+                "wh1110000\\Core\\Providers\\ComponentsServiceProvider",
+                "wh1110000\\Core\\Providers\\HelpersServiceProvider",
+                "wh1110000\\Core\\Providers\\HtmlServiceProvider",
+                "wh1110000\\Core\\Providers\\SweetAlertServiceProvider",
+                "wh1110000\\Core\\Providers\\ContactServiceProvider"
                 "AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider",
-                "Workhouse\\Contact\\Providers\\ContactServiceProvider"
+                "Spatie\\Permission\\PermissionServiceProvider",
             ],
             "aliases": {
-                "Button": "Workhouse\\Components\\Facades\\Button",
-                "DataTable": "Workhouse\\Components\\Facades\\DataTable",
-                "Fields": "Workhouse\\Components\\Facades\\Fields",
-                "Navigation": "Workhouse\\Components\\Facades\\Navigation",
-                "Row": "Workhouse\\Components\\Facades\\Row",
-                "Form": "Workhouse\\Components\\Facades\\Form",
-                "Html": "Workhouse\\Components\\Facades\\Html"
+                "Button": "wh1110000\\Core\\View\\Components\\Facades\\Button",
+                "DataTable": "wh1110000\\Core\\View\\Components\\Facades\\DataTable",
+                "Fields": "wh1110000\\Core\\View\\Components\\Facades\\Fields",
+                "Navigation": "wh1110000\\Core\\View\\Components\\Facades\\Navigation",
+                "Row": "wh1110000\\Core\\View\\Components\\Facades\\Row",
+                "Form": "wh1110000\\Core\\View\\Components\\Facades\\Form",
+                "Html": "wh1110000\\Core\\View\\Components\\Facades\\Html"
             },
             "dont-discover": [
                 "laravelcollective/html"
