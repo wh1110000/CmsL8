@@ -44,7 +44,6 @@
                 "wh1110000\\CmsL8\\Providers\\PermissionsServiceProvider",
                 "wh1110000\\CmsL8\\Providers\\PagesServiceProvider",
                 "wh1110000\\CmsL8\\Providers\\MultilanguageServiceProvider",
-                "wh1110000\\CmsL8\\Providers\\TranslationServiceProvider",
                 "wh1110000\\CmsL8\\Providers\\MediaServiceProvider",
                 "wh1110000\\CmsL8\\Providers\\AuthServiceProvider",
                 "wh1110000\\CmsL8\\Providers\\AdministratorsServiceProvider",
