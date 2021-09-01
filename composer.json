@@ -54,9 +54,9 @@
                 "wh1110000\\Core\\Providers\\HelpersServiceProvider",
                 "wh1110000\\Core\\Providers\\HtmlServiceProvider",
                 "wh1110000\\Core\\Providers\\SweetAlertServiceProvider",
-                "wh1110000\\Core\\Providers\\ContactServiceProvider"
+                "wh1110000\\Core\\Providers\\ContactServiceProvider",
                 "AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider",
-                "Spatie\\Permission\\PermissionServiceProvider",
+                "Spatie\\Permission\\PermissionServiceProvider"
             ],
             "aliases": {
                 "Button": "wh1110000\\Core\\View\\Components\\Facades\\Button",
