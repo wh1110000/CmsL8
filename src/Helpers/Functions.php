@@ -366,7 +366,7 @@
 
 	function textColour($bgColour){
 
-		return hexdec($bgColour) > 0xffffff / 2 ? 'black' : 'white';
+		return hexdec(str_replace('#', '', $bgColour)) > 0xffffff / 2 ? 'black' : 'white';
 }
 //}
 
