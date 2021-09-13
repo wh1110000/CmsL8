@@ -20,7 +20,7 @@ class PagesServiceProvider extends AbstractServiceProvider {
 		$namespace = Str::beforeLast($reflector->getNamespaceName(), '\\Providers');
 
 		Route::middleware( [ 'web' /*'auth:web'*/ ] )
-		    ->namespace( '\\'.$namespace.'\Controllers\Website' )
+		    ->namespace( '\\'.$namespace.'\Http\Controllers\Website' )
 		    ->prefix( self::getLocalePrefix() )
 			->group(function() {
 
