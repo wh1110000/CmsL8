@@ -2,5 +2,5 @@
 
 return [
 	'driver'   => 'eloquent',
-	'model' => Workhouse\Administrators\Models\Presenters\Administrator::class
+	'model' => wh1110000\CmsL8\Models\Presenters\Administrator::class
 ];
