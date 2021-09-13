@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use wh1110000\CmsL8\Services\Nav\Admin;
 use wh1110000\CmsL8\Http\Controllers\Html\Button;
-use wh1110000\CmsL8\Http\Controllers\DataTable;
+use wh1110000\CmsL8\Http\Controllers\DataTable\DataTable;
 use wh1110000\CmsL8\Http\Controllers\Html\Fields;
 use wh1110000\CmsL8\Services\Nav\Website;
 use wh1110000\CmsL8\Http\Controllers\Html\Admin\Row;
