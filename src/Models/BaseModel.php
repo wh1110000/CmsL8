@@ -18,6 +18,7 @@ use wh1110000\CmsL8\Traits\Slug;
 use wh1110000\CmsL8\Traits\Media;
 use wh1110000\CmsL8\Traits\Multilanguage;
 use wh1110000\CmsL8\Traits\Seo;
+use wh1110000\CmsL8\Traits\Address;
 
 /**
  * Class BaseModel
@@ -26,7 +27,7 @@ use wh1110000\CmsL8\Traits\Seo;
 
 class BaseModel extends Model implements Searchable {
 
-	use Slug, ModelHelper, Multilanguage, Seo, Content, Search, Media, Property;
+	use Slug, ModelHelper, Multilanguage, Seo, Content, Search, Media, Property, Address;
 
 	/**
 	 * @var
