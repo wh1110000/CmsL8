@@ -233,7 +233,7 @@ abstract class AbstractServiceProvider extends ServiceProvider {
 
 	public function loadTranslations(){
 
-		$this->loadTranslationsFrom($this->dir('/resources/lang'), $this->package);
+		$this->loadTranslationsFrom($this->dir('/resources/lang'), 'core');
 	}
 
 	/**
