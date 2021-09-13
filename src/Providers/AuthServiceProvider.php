@@ -22,7 +22,7 @@ class AuthServiceProvider extends AbstractServiceProvider {
 
 		//Route::middleware(['web'])
 		Route::middleware(['web'])
-		     ->namespace($this->namespace.'\Controllers\Auth')
+		     ->namespace($this->namespace.'\Http\Controllers\Auth')
 		     //->prefix('admin')
 		     ->prefix(self::getLocalePrefix('admin'))
 		     ->as('admin.auth.')
