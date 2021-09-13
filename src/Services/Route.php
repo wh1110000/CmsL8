@@ -5,6 +5,7 @@ namespace wh1110000\CmsL8\Services;
 use Illuminate\Routing\RouteBinding;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use wh1110000\CmsL8\Providers\ArchivesServiceProvider;
 
 /**
  * Class Route
@@ -23,9 +24,8 @@ class Route extends \Illuminate\Routing\Route {
 
 	private function appNamespace($key){
 
-		return	Str::finish( config(  $key), $this->divider ) . Str::afterLast($this->packageNamespace, '\\'). (Str::contains($this->packageNamespace, '\\Auth') ? '\\' . (Route::isWebRoute() ? 'Website' : 'Admin') : '');
+		return	Str::finish( config(  $key), $this->divider ). (Str::contains($this->packageNamespace, '\\Auth') ? '\\' . (Route::isWebRoute() ? 'Website' : 'Admin') : '');
 	}
-
 
 	/**
 	 * @return mixed
@@ -34,7 +34,12 @@ class Route extends \Illuminate\Routing\Route {
 
 	public function getController() {
 
-		if($this->controller){
+
+		$isArchive = false;
+
+		if(!Str::contains($this->getAction('uses'), 'Auth')){
+
+		if(1==1 || $this->controller){
 
 			$class = $this->controller ? get_class($this->controller) : $this->parseControllerCallback()[0];
 
@@ -42,14 +47,16 @@ class Route extends \Illuminate\Routing\Route {
 
 			$controllerPackageName = Str::lower(implode('-', array_filter(preg_split('/(?=[A-Z])/',Str::replaceLast('Controller', '', $controllerName)))));
 
-			$this->packageNamespace = optional(request()->route())->getAction('namespace');
+			$this->packageNamespace = 'wh1110000\CmsL8\Http\Controllers'; //@todo
 
-			if(!class_exists($class) && Str::startsWith($this->packageNamespace, 'wh1110000\Archives\\')){
+
+			if(!class_exists($class) && in_array(ucfirst($controllerPackageName), ArchivesServiceProvider::getArchives() )){
+
+				$isArchive = true;
 
 				$archiveName = Str::beforeLast( Str::afterLast($class, '\\'), 'Controller');
 
 				$class = str_replace($archiveName, 'Archive', $class);
-
 
 				//$parentsClass = class_parents($class);
 
@@ -67,15 +74,14 @@ class Route extends \Illuminate\Routing\Route {
 				dd($this->action);
 			}*/
 
+
 			$parentsClass = class_parents($class);
-
-
 
 			//$parentsClass = class_parents($class);
 
 			if(Str::startsWith($this->packageNamespace, 'App') && is_array($parentsClass) && ($newPackageNamespace = Arr::first($parentsClass, function ($value, $key) {
 
-				return Str::beforeLast(Str::startsWith($value, 'Workhouse'), '\\');
+				return Str::beforeLast(Str::startsWith($value, 'wh1110000'), '\\');
 
 			}))){
 
@@ -85,31 +91,33 @@ class Route extends \Illuminate\Routing\Route {
 
 			//if(!$this->controller){
 
+            foreach([
+                str_replace('wh1110000\CmsL8', 'App', $this->appNamespace('general.controller_namespace')),
+                $this->packageNamespace . $this->divider
+            ] as $namespace){
+                
 
-				foreach([
-					$this->appNamespace('general.controller_namespace'),
-					$this->packageNamespace
-				] as $namespace){
+            $namespace = $namespace . (Str::contains($class, '\\Website') ? 'Website' : 'Admin') . $this->divider;
 
-					if (class_exists($controller = $namespace . $this->divider .  $controllerName) ) {
+                if (class_exists($controller = $namespace .  $controllerName) ) {
 
-						$this->controller = $this->container->make(ltrim($controller, '\\'));
+                    $this->controller = $this->container->make(ltrim($controller, '\\'));
 
-						break;
-					}
-				}
+                    break;
+                }
+            }
 			//}
 
 			//REPOSITORY
 
 			foreach ([
 				$this->appNamespace( 'general.repository_namespace' ),
-				Str::replaceLast( 'Controllers', 'Repositories', $this->packageNamespace )
+				Str::replaceLast( 'Controllers', 'Repositories', $this->packageNamespace ) . $this->divider
 			] as $_namespace ) {
+				$_namespace = $_namespace . (Str::contains($class, '\\Website') ? 'Website' : 'Admin') . $this->divider;
 
 
-				if ( class_exists( $repositoryName = $_namespace . $this->divider . Str::replaceLast( 'Controller', 'Repository', $controllerName ) ) ) {
-
+				if ( class_exists( $repositoryName = $_namespace . Str::replaceLast( 'Controller', 'Repository', $controllerName ) ) ) {
 
 					$repository = new $repositoryName;
 
@@ -135,7 +143,9 @@ class Route extends \Illuminate\Routing\Route {
 						$repository->package  = Str::finish($repository->package, '-category');
 					}
 
+
 					$repository->prefix = self::isWebRoute() ? '' : 'admin';
+
 
 					if(class_exists($model = '\\'.class_basename(Str::before($repositoryName, 'Repository')))) {
 
@@ -143,7 +153,13 @@ class Route extends \Illuminate\Routing\Route {
 
 						if ($slug = Route::getCurrentRouteName() === 'page.homepage' ? 'homepage' : request()->route()->parameter($repository->_package)) {
 
-							$repository->model = $repository->model->resolveRouteBinding($slug)/*->with('translations')*/->firstOrFail();
+							if($slug instanceof \Illuminate\Database\Eloquent\Builder){
+
+								$repository->model = $slug->firstOrFail();
+							} else {
+
+								$repository->model = $repository->model->resolveRouteBinding($slug)/*->with('translations')*/->firstOrFail();
+							}
 
 							//dd($repository->model);
 							//dd($repository->model->toArray());
@@ -163,10 +179,12 @@ class Route extends \Illuminate\Routing\Route {
 
 					//Request
 
+
 					foreach ( [
-						str_replace('\Controllers', '\Requests', $this->packageNamespace),
-						$this->appNamespace('general.repository_namespace'),
+						str_replace('\Controllers', '\Requests', $this->packageNamespace) . $this->divider,
+						$this->appNamespace('general.request_namespace'),
 					] as $__namespace ) {
+						$__namespace = $__namespace . (Str::contains($class, '\\Website') ? 'Website' : 'Admin') . $this->divider;
 
 						if ( class_exists( $requestName = Str::finish( $__namespace, $this->divider ) . Str::replaceLast( 'Controller', 'Request', $controllerName ) ) ) {
 
@@ -197,24 +215,30 @@ class Route extends \Illuminate\Routing\Route {
 
 			parent::getController();
 		}
+			} else {
+
+				parent::getController();
+			}
 
 		if(isset($repository)){
 
 
-			if($repository->orgPackage == 'archives'){
+			if($isArchive){
 
 				$repository->package = 'archive';
 
 				$repository->view = '::archive';
 			}
-
-			if($repository->package == 'product'){
+			/*if($repository->package == 'product'){
 				$repository->view = '::index';
-			}
+			}*/
 
 			$page = isset($repository->model) && $repository->model instanceof \Page ? $repository->model : (new \Page)->where('package', $repository->package)->where('type', Str::after($repository->view, '::'))->first();
 
-			request()->attributes->add(['currentPage' => $page]);
+
+			if(!request()->attributes->has('currentPage')) {
+				request()->attributes->add( [ 'currentPage' => $page ] );
+			}
 
 			if(isset($repository->model)){
 
