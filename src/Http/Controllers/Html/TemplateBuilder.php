@@ -204,7 +204,7 @@ class TemplateBuilder extends HtmlBuilder {
 
 	public function copyright() {
 
-		$copyright = trans('cms::general.copyright');
+		$copyright = trans('core::general.copyright');
 
 		return $this->toHtmlString($copyright);
 	}
