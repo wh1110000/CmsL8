@@ -3,10 +3,10 @@
 namespace wh1110000\CmsL8\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use wh1110000\CmsL8\Controllers\Uploader;
+use wh1110000\CmsL8\Http\Controllers\Uploader;
 use wh1110000\CmsL8\Models\Presenters\Media;
-use wh1110000\CmsL8\Requests\Admin\Modal\FileRequest;
-use wh1110000\CmsL8\Requests\Admin\Modal\MediaRequest;
+use wh1110000\CmsL8\Http\Requests\Admin\Modal\FileRequest;
+use wh1110000\CmsL8\Http\Requests\Admin\Modal\MediaRequest;
 
 /**
  * Class MediaController
