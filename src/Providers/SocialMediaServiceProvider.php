@@ -3,7 +3,7 @@
 namespace wh1110000\CmsL8\Providers;
 
 use Illuminate\Support\Facades\Blade;
-use wh11100001906\SocialMedia\Components\SocialMedia;
+use wh1110000\CmsL8\Components\SocialMedia;
 use wh1110000\CmsL8\Providers\AbstractServiceProvider;
 
 /**
