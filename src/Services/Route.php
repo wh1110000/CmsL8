@@ -44,7 +44,7 @@ class Route extends \Illuminate\Routing\Route {
 
 			$this->packageNamespace = optional(request()->route())->getAction('namespace');
 
-			if(!class_exists($class) && Str::startsWith($this->packageNamespace, 'Workhouse\Archives\\')){
+			if(!class_exists($class) && Str::startsWith($this->packageNamespace, 'wh1110000\Archives\\')){
 
 				$archiveName = Str::beforeLast( Str::afterLast($class, '\\'), 'Controller');
 
