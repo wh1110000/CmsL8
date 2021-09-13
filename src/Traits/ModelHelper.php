@@ -3,7 +3,7 @@
 namespace wh1110000\CmsL8\Traits;
 
 use Illuminate\Support\Str;
-use wh1110000\CmsL8\Controllers\Tab;
+use wh1110000\CmsL8\Http\Controllers\Tab;
 use wh1110000\CmsL8\Services\Route;
 
 /**
