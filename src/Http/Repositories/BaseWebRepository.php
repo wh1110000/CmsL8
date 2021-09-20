@@ -50,7 +50,12 @@ class BaseWebRepository {
 
 		$model = null;
 
+
 		if($modelName = app('DoctrineInflector')->singularize(Str::replaceLast('Controller', '',Str::afterLast($calledClass, '\\')))){
+
+			if($modelName == 'Contact'){
+				$modelName = 'Email';
+			}
 
 			$modelName = '\\'.$modelName;
 
@@ -59,7 +64,6 @@ class BaseWebRepository {
 			if($modelName) {
 
 				$slug = is_object($model) ? ($model->getPostType() == 'page' ? (request( 'page') ?: 'homepage') : $model->getPostType()) : Str::slug($modelName);
-
 
 				$model = \Page::where( 'link', $slug )->first();
 
@@ -96,6 +100,7 @@ class BaseWebRepository {
 			}
 		}
 
+
 		$class = \Route::current()->controller;
 
 		if(property_exists($class, 'model')){
@@ -118,7 +123,7 @@ class BaseWebRepository {
 		//if($model){
 		//if(class_exists($repository)){
 
-			$this->repository = class_exists($repository) ? new $repository() : ($model ? new \Workhouse\Cms\Admin\Repositories\GeneralFrontendRepository($model) : null);
+			$this->repository = class_exists($repository) ? new $repository() : ($model ? new GeneralFrontendRepository() : null);
 		//}
 
 		$this->action = \Route::current()->getAction('uses');

@@ -18,8 +18,8 @@ trait Seo {
 		return \Row::init()
 			->addCol(6)
 			->addSection(__('Meta Data'))
-			->addField(\Fields::text('meta_title', __('seo::fields.meta_title'))->add())
-			->addField(\Fields::textarea('meta_description', __('seo::fields.meta_description'))->add());
+			->addField(\Fields::text('meta_title', __('core::fields.meta_title'))->add())
+			->addField(\Fields::textarea('meta_description', __('core::fields.meta_description'))->add());
 	}
 
 	/**

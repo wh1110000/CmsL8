@@ -1,3 +1,3 @@
 @extends('admin::default')
 
-@section('title', __($namespace.'::general.categories'))
+@section('title', __('core::general.categories'))

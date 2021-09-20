@@ -1,6 +1,6 @@
 @extends('admin::admin')
 
-@section('title', __('cms::general.dashboard'))
+@section('title', __('core::general.dashboard'))
 
 @section('content')
 

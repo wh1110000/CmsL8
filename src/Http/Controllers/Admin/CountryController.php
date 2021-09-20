@@ -2,7 +2,7 @@
 
 namespace wh1110000\CmsL8\Http\Controllers\Admin;
 
-use wh1110000\CmsL8\Http\Requests\Modal\ModalRequest;
+use wh1110000\CmsL8\Http\Requests\ModalRequest;
 
 /**
  * Class CountryController

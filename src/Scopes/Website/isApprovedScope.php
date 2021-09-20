@@ -25,7 +25,6 @@ class isApprovedScope implements Scope {
 
 			if(in_array('approved', $model->getFillable())){
 
-				dd('x');
 			if(!auth()->guard('administrator')->check() || !request()->has('preview') || request('preview') !== csrf_token()){
 
 				$builder->where('approved', true);

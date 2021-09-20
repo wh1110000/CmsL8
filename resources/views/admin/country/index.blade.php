@@ -1,6 +1,6 @@
 @extends('admin::default')
 
-@section('title', __('multilanguage::general.countries'))
+@section('title', __('core::general.countries'))
 
 @section('navigation')
 

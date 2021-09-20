@@ -77,7 +77,8 @@ trait ModelHelper {
 
 	public function getPostType(){
 
-		return $this->postType;
+
+		return $this->postType ?: Str::afterLast(get_called_class(), '/');
 	}
 
 	/**

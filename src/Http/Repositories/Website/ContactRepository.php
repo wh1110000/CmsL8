@@ -15,7 +15,7 @@ use wh1110000\CmsL8\Http\Repositories\WebRepository;
 class ContactRepository extends WebRepository {
 
 
-	public function submitForm($email = null){
+		public function submitForm($email = null){
 
 		$email = $email ?: app('SettingsManager')->get('EMAIL');
 
@@ -23,11 +23,8 @@ class ContactRepository extends WebRepository {
 
 			throw new \Exception('Something went wrong');
 		}
-
-		return $this->transaction(route('contact.thankyou'), function () use ($email) {
-
-			$request = $this->getRequest();
-
+			$request = is_object($this->requestClass) ? \App::make(get_class($this->requestClass)) : request();
+			
 			Mail::to($email)->send(new ContactUs($request));
 
 			$_request = array_filter($request->all(), function ($key){
@@ -44,8 +41,8 @@ class ContactRepository extends WebRepository {
 
 			$inbox->fill(array_merge($data, ['type' => 'inbox']))->save();
 
-			return true;
-		});
+			return redirect()->route('contact.thankyou');
+	
 	}
 
 	/**

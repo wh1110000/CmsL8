@@ -1,33 +1,36 @@
 <?php
 
-/*foreach(\Workhouse\Articles\Providers\ArticlesServiceProvider::getArchives() as $plural => $model){
+foreach(\wh1110000\CmsL8\Providers\ArchivesServiceProvider::getArchives() as $plural => $model){
 
-	$singular = app('DoctrineInflector')->singularize($plural);
+
+	$singular = strtolower(app('DoctrineInflector')->singularize($plural));
+
+	$plural = strtolower($plural);
 
 	Route::as($singular.'.')->group(function() use ($plural, $singular) {
 
 		Route::prefix($plural)->group(function() {
 
 			Route::match(['get', 'post'], '/', [
-				'uses' => 'ArticleController@index',
+				'uses' => 'ArchiveController@index',
 				'as'   => 'index'
 			]);
 		});
 
 		Route::prefix(($plural == $singular ? 'show-' : '').$singular)->group(function() {
 
-			Route::get('/{article?}', [
-				'uses' => 'ArticleController@show',
+			Route::get('/{Archive?}', [
+				'uses' => 'ArchiveController@show',
 				'as'   => 'show'
 			]);
 
-			Route::put('/{article?}', [
-				'uses' => 'ArticleController@store',
+			Route::put('/{Archive?}', [
+				'uses' => 'ArchiveController@store',
 				'as'   => 'save'
 			]);
 
-			Route::delete('/{article}', [
-				'uses' => 'ArticleController@destroy',
+			Route::delete('/{Archive}', [
+				'uses' => 'ArchiveController@destroy',
 				'as'   => 'destroy'
 			]);
 		});
@@ -38,7 +41,7 @@
 		Route::prefix( $singular.'-categories' )->group(function() {
 
 			Route::match(['get', 'post'], '/', [
-				'uses' => 'ArticleCategoryController@index',
+				'uses' => 'ArchiveCategoryController@index',
 				'as'   => 'index'
 			]);
 		});
@@ -46,20 +49,19 @@
 		Route::prefix( $singular.'-category' )->group(function() {
 
 			Route::get('/{category?}', [
-				'uses' => 'ArticleCategoryController@show',
+				'uses' => 'ArchiveCategoryController@show',
 				'as'   => 'show'
 			]);
 
 			Route::put('/{category?}', [
-				'uses' => 'ArticleCategoryController@store',
+				'uses' => 'ArchiveCategoryController@store',
 				'as'   => 'save'
 			]);
 
 			Route::delete('/{category}', [
-				'uses' => 'ArticleCategoryController@destroy',
+				'uses' => 'ArchiveCategoryController@destroy',
 				'as'   => 'destroy'
 			]);
 		});
 	});
 }
-*/

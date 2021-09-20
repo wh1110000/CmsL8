@@ -1,6 +1,8 @@
 <?php
 
 namespace wh1110000\CmsL8\Models\Presenters;
+use wh1110000\CmsL8\Traits\Multilanguage;
+use wh1110000\CmsL8\Traits\Seo;
 
 /**
  * Class Role
@@ -8,6 +10,8 @@ namespace wh1110000\CmsL8\Models\Presenters;
  */
 
 class Role extends \wh1110000\CmsL8\Models\Role {
+
+	use Seo, Multilanguage;
 
 	/**
 	 * @return mixed
@@ -19,13 +23,13 @@ class Role extends \wh1110000\CmsL8\Models\Role {
 		   ->setRoute(route($route.'index', ['guard' => request()->route()->parameter('guard')]))
 			->setColumns([
 			   'name' => [
-			       'title' => __('cms::general.name'),
+			       'title' => __('core::general.name'),
 			       'filter' => [
 			           'type' => 'text'
 			       ]
 			   ],
 			   'permissions' => [
-			       'title' => __('cms::general.permissions'),
+			       'title' => __('core::general.permissions'),
 			       'filter' => [
 			           'type' => 'text'
 			       ]
@@ -58,10 +62,10 @@ class Role extends \wh1110000\CmsL8\Models\Role {
 
 		return \Row::init()
 		    ->addCol(6)
-		    ->addSection(__('cms::general.basic'))
+		    ->addSection(__('core::general.basic'))
 		    ->addField(\Fields::text('name')->add())
 		    ->addCol(6)
-		    ->addSection(__('cms::general.permissions'))
+		    ->addSection(__('core::general.permissions'))
 		    ->addField(\Fields::multiselect('permissions')->values(\Permission::where('guard_name', request()->route()->parameter('guard'))->pluck('name', 'id'))->selected($this->permissions()->pluck('id', 'name'))->add());
 	}
 }

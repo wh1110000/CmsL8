@@ -1,6 +1,8 @@
 <?php
 
 namespace wh1110000\CmsL8\Models\Presenters;
+use wh1110000\CmsL8\Traits\Multilanguage;
+use wh1110000\CmsL8\Traits\Seo;
 
 /**
  * Class Permission
@@ -9,6 +11,7 @@ namespace wh1110000\CmsL8\Models\Presenters;
 
 class Permission extends \wh1110000\CmsL8\Models\Permission {
 
+	use Seo, Multilanguage;
 	/**
 	 * @param $route
 	 *
@@ -21,7 +24,7 @@ class Permission extends \wh1110000\CmsL8\Models\Permission {
 		    ->setRoute(route($route.'index', ['guard' => request()->route()->parameter('guard')]))
 			->setColumns([
 			   'name' => [
-			       'title' => __('cms::general.name'),
+			       'title' => __('core::general.name'),
 			       'filter' => [
 			           'type' => 'text'
 			       ]
@@ -51,10 +54,10 @@ class Permission extends \wh1110000\CmsL8\Models\Permission {
 
 		return \Row::init()
 			->addCol(6)
-			->addSection(__('cms::general.basic'))
+			->addSection(__('core::general.basic'))
 			->addField(\Fields::text('name')->add())
 			->addColWhen($this->exists, 6)
-			->addSection(__('cms::general.roles'))
+			->addSection(__('core::general.roles'))
 			->addField(\Fields::multiselect('roles')->disabled()->values(\Role::where('guard_name', request()->route()->parameter('guard'))->pluck('name', 'id'))->selected($this->roles()->pluck('id', 'name'))->add());
 	}
 }

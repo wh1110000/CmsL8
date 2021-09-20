@@ -231,7 +231,7 @@ class Button extends HtmlBuilder {
 
 	public function add($route, $visible = true, $render = true){
 
-		return $this->preDefinedButton($route, __('cms::general.add'), 'fas fa-plus', ['class' => ['btn-success']], $visible, $render);
+		return $this->preDefinedButton($route, __('core::general.add'), 'fas fa-plus', ['class' => ['btn-success']], $visible, $render);
 	}
 
 	/**
@@ -244,7 +244,7 @@ class Button extends HtmlBuilder {
 
 	public function edit($route, $visible = true, $render = true){
 
-		return $this->preDefinedButton($route, __('cms::general.edit'), 'fas fa-edit', ['class' => ['btn-warning']], $visible, $render);
+		return $this->preDefinedButton($route, __('core::general.edit'), 'fas fa-edit', ['class' => ['btn-warning']], $visible, $render);
 		//return $render ? $this->render($route) : $this;
 	}
 
@@ -258,7 +258,7 @@ class Button extends HtmlBuilder {
 
 	public function show($route, $visible = true, $render = true){
 
-		return $this->preDefinedButton($route, __('cms::general.show'), 'fas fa-eye', ['class' => ['btn-info']], $visible, $render);
+		return $this->preDefinedButton($route, __('core::general.show'), 'fas fa-eye', ['class' => ['btn-info']], $visible, $render);
 	}
 
 	/**
@@ -273,7 +273,7 @@ class Button extends HtmlBuilder {
 
 		//$this->attributes['data-method'] = 'DELETE';
 
-		return $this->preDefinedButton($route, __('cms::general.delete'), 'fas fa-trash', ['data-method' => 'DELETE', 'class' => ['btn-danger','btn-alert']], $visible, $render);
+		return $this->preDefinedButton($route, __('core::general.delete'), 'fas fa-trash', ['data-method' => 'DELETE', 'class' => ['btn-danger','btn-alert']], $visible, $render);
 	}
 
 	/**
@@ -286,7 +286,7 @@ class Button extends HtmlBuilder {
 
 	public function download($route, $visible = true, $render = true){
 
-		return $this->preDefinedButton($route, __('cms::general.download'), 'fas fa-download', ['class' => ['btn-warning']], $visible, $render);
+		return $this->preDefinedButton($route, __('core::general.download'), 'fas fa-download', ['class' => ['btn-warning']], $visible, $render);
 	}
 
 	/**
@@ -299,7 +299,7 @@ class Button extends HtmlBuilder {
 
 	public function back($route, $visible = true, $render = true){
 
-		return $this->preDefinedButton($route, __('cms::general.back'), 'fas fa-undo-alt', ['class' => ['btn-default']], $visible, $render);
+		return $this->preDefinedButton($route, __('core::general.back'), 'fas fa-undo-alt', ['class' => ['btn-default']], $visible, $render);
 	}
 
 	/**

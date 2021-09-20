@@ -3,7 +3,7 @@
 
         <div class="col-sm-6">
 
-           {{  Html::block('open', __('shops::general.week'), Button::edit(['admin.shop.modal.weekdays', $post], true, false)->modal()->render(true)) }}
+           {{  Html::block('open', __('core::general.week'), Button::edit(['admin.shop.modal.weekdays', $post], true, false)->modal()->render(true)) }}
 
                 @foreach($post->getOpeningHours()['weekdays'] as $day)
 
@@ -17,7 +17,7 @@
 
         <div class="col-sm-6">
 
-            {{ Html::block('open', __('shops::general.bank_holidays'), Button::add(['admin.shop.modal.bankholidays', $post], true, false)->modal()->render(true)) }}
+            {{ Html::block('open', __('core::general.bank_holidays'), Button::add(['admin.shop.modal.bankholidays', $post], true, false)->modal()->render(true)) }}
 
                 @forelse($post->getOpeningHours()['bank_holidays'] as $day)
 

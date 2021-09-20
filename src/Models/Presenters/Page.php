@@ -52,21 +52,21 @@ class Page extends \wh1110000\CmsL8\Models\Page {
 			->setRoute($route.'index')
 			->setColumns([
 			   'title' => [
-			       'title' => __('pages::fields.title'),
+			       'title' => __('core::fields.title'),
 			       'filter' => [
 			           'type' => 'text',
 			       ],
 			       'width' => 40,
 			   ],
 			   'link' => [
-				   'title' => __('pages::fields.link'),
+				   'title' => __('core::fields.link'),
 				   'filter' => [
 					   'type' => 'text',
 				   ],
 				   'width' => 40,
 			   ],
 			   'type' => [
-				   'title' => __('pages::fields.type'),
+				   'title' => __('core::fields.type'),
 				   'filter' => [
 					   'type' => 'select',
 					   'values' => collect(['internal' => 'Internal', 'external' => 'External', 'global' => 'Global', 'archive' => 'Archive'])->prepend('','')
@@ -98,7 +98,7 @@ class Page extends \wh1110000\CmsL8\Models\Page {
 
 		$this->row = \Row::init()
 			->addCol(6)
-			->addSection(__('cms::general.basic'))
+			->addSection(__('core::general.basic'))
 			->addField(\Fields::text('title')->add());
 
 		if($type == 'external'){
@@ -131,7 +131,7 @@ class Page extends \wh1110000\CmsL8\Models\Page {
 		$this->row->addField(\Fields::select('parent_id')->values(\Page::pluck('title', 'id')->prepend(''))->selected($this->parent_id)->add());
 
 		$this->row->addCol(6)
-			->addSection(__('cms::general.images'))
+			->addSection(__('core::general.images'))
 			->addField(\Fields::file('thumbnail')->add());
 
 		if($type !== 'external'){

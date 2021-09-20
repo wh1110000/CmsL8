@@ -169,10 +169,10 @@ class ArchivesServiceProvider extends AbstractServiceProvider {
 
 			foreach ([
 				config( 'general.model_namespace' ),
-				$this->namespace . '\\Presenters\\',
+				$this->namespace . '\\Models\\Presenters\\',
 				$this->namespace . '\\Models\\',
-				'Workhouse\\Archives\\Presenters\\',
-				'Workhouse\\Archives\\Models\\'
+				//'Workhouse\\Archives\\Models\\Presenters\\',
+				//'Workhouse\\Archives\\Models\\'
 			] as $_namespace ) {
 
 				if (class_exists($model = Str::finish($_namespace, '\\' ) . $name ) ) {

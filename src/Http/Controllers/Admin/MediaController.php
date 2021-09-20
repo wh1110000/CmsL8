@@ -3,7 +3,7 @@
 namespace wh1110000\CmsL8\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use wh1110000\CmsL8\Http\Controllers\Uploader;
+use wh1110000\CmsL8\Http\Controllers\Uploader\Uploader;
 use wh1110000\CmsL8\Models\Presenters\Media;
 use wh1110000\CmsL8\Http\Requests\Admin\Modal\FileRequest;
 use wh1110000\CmsL8\Http\Requests\Admin\Modal\MediaRequest;
@@ -113,9 +113,11 @@ class MediaController extends Controller {
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
 
-	public function editModal(FileRequest $request, Media $file){
+	public function editModal(FileRequest $request, $file){
 
 		$result = false;
+
+		$file = \Media::where('id', $file)->first();
 
 		if($request->action == 'add'){
 

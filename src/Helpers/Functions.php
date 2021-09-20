@@ -366,7 +366,7 @@
 
 	function textColour($bgColour){
 
-		return hexdec(str_replace('#', '', $bgColour)) > 0xffffff / 2 ? 'black' : 'white';
+		return hexdec(\Illuminate\Support\Str::after($bgColour, '#')) > 0xffffff / 2 ? 'black' : 'white';
 }
 //}
 

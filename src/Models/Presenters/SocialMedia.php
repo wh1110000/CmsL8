@@ -35,21 +35,21 @@ class SocialMedia extends \wh1110000\CmsL8\Models\SocialMedia {
 			->setRoute('admin.social-media.index')
              ->setColumns([
                  'service' => [
-	                 'title' => __('socialMedia::fields.service'),
+	                 'title' => __('core::fields.service'),
 	                 'width' => 25,
 	                 'filter' => [
 		                 'type' => 'text',
 	                 ],
                  ],
                  'url' => [
-	                 'title' => __('socialMedia::fields.url'),
+	                 'title' => __('core::fields.url'),
 	                 'width' => 25,
 	                 'filter' => [
 		                 'type' => 'text',
 	                 ],
                  ],
                  'name' => [
-	                 'title' => __('socialMedia::fields.name'),
+	                 'title' => __('core::fields.name'),
 	                 'width' => 25,
 	                 'filter' => [
 		                 'type' => 'text',
@@ -75,13 +75,13 @@ class SocialMedia extends \wh1110000\CmsL8\Models\SocialMedia {
 
 		return \Row::init()
 			->addCol(6)
-			->addSection(__('cms::general.basic'))
-			->addField(\Fields::text('service', __('socialMedia::fields.service'))->add())
+			->addSection(__('core::general.basic'))
+			->addField(\Fields::text('service', __('core::fields.service'))->add())
 			->addField([
-				\Fields::text('url', __('socialMedia::fields.url'))->add(),
-				\Fields::text('name', __('socialMedia::fields.name'))->add()
+				\Fields::text('url', __('core::fields.url'))->add(),
+				\Fields::text('name', __('core::fields.name'))->add()
 			])
-			->addField(\Fields::select('active', __('socialMedia::fields.active'))->values([0 => 'No', 1 => 'Yes'])->selected($this->active)->add())
+			->addField(\Fields::select('active', __('core::fields.active'))->values([0 => 'No', 1 => 'Yes'])->selected($this->active)->add())
 			->addField(\Fields::iconPicker('icon')->add());
 	}
 }

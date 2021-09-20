@@ -8,6 +8,7 @@ return [
 	'logout'           => 'Logout',
 
 	'social_media' => 'Social Media',
+	'menus' => 'Menus',
 
 	'shop' => 'Store',
 	'shops' => 'Stores',
@@ -44,9 +45,6 @@ return [
 	'posts' => 'Posts',
 
 	'dashboard'                     => 'Dashboard',
-	'category'                      => 'Category',
-	'categories'                    => 'Categories',
-
 	//Blocks
 	'account_details'               => 'Account Details',
 	'basic'                         => 'Basic',

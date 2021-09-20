@@ -1,6 +1,6 @@
 @if(isset($post))
     <div class="share">
-        <span>{{ __('cms::general.share') }}</span>
+        <span>{{ __('core::general.share') }}</span>
 
         <div class="list">
             <ul>

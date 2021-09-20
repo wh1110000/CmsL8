@@ -30,7 +30,7 @@ class ArchiveCategory extends BaseModel {
 			->setRoute($route.'index')
 			->setColumns([
 			   'title'      => [
-			       'title'  => __('cms::general.title'),
+			       'title'  => __('core::general.title'),
 			       'width'  => 65,
 			       'filter' => [
 			           'type' => 'text'

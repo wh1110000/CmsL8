@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Collection as BaseCollection;
 use Spatie\Searchable\Searchable;
+use wh1110000\CmsL8\Traits\Address;
+use wh1110000\CmsL8\Traits\Contact;
 use wh1110000\CmsL8\Traits\Property;
 use wh1110000\CmsL8\Traits\Search;
 use wh1110000\CmsL8\Scopes\Website\isApprovedScope;
@@ -18,8 +20,6 @@ use wh1110000\CmsL8\Traits\Slug;
 use wh1110000\CmsL8\Traits\Media;
 use wh1110000\CmsL8\Traits\Multilanguage;
 use wh1110000\CmsL8\Traits\Seo;
-use wh1110000\CmsL8\Traits\Address;
-use wh1110000\CmsL8\Traits\Contact;
 
 /**
  * Class BaseModel

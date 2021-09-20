@@ -28,7 +28,7 @@ class ProductCategory extends \wh1110000\CmsL8\Models\ProductCategory {
 			->setRoute($route.'index')
 			->setColumns([
 				'title'      => [
-					'title'  => __('products::fields.title'),
+					'title'  => __('core::fields.title'),
 					'width'  => 65,
 					'filter' => [
 						'type' => 'text'
@@ -55,12 +55,12 @@ class ProductCategory extends \wh1110000\CmsL8\Models\ProductCategory {
 		return \Row::init()
 			->addCol(6)
 			->addSection(__('General'))
-			->addField(\Fields::text('title', __('products::fields.title'))->add())
-			->addField(\Fields::textarea('description', __('products::fields.description'))->add())
-			->addField(\Fields::file('thumbnail', __('products::fields.thumbnail'))->add())
+			->addField(\Fields::text('title', __('core::fields.title'))->add())
+			->addField(\Fields::textarea('description', __('core::fields.description'))->add())
+			->addField(\Fields::file('thumbnail', __('core::fields.thumbnail'))->add())
 			->addCol(6)
-			->addSection(__('cms::general.logs'))
-			->addField(\Fields::text('created_at', __('products::fields.created_at'))->disabled()->add())
-			->addField(\Fields::text('updated_at', __('products::fields.updated_at'))->disabled()->add());
+			->addSection(__('core::general.logs'))
+			->addField(\Fields::text('created_at', __('core::fields.created_at'))->disabled()->add())
+			->addField(\Fields::text('updated_at', __('core::fields.updated_at'))->disabled()->add());
 	}
 }

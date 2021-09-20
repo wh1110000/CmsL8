@@ -2,6 +2,7 @@
 
 namespace wh1110000\CmsL8\Services;
 
+use Illuminate\Database\Query\Builder;
 use Illuminate\Routing\RouteBinding;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -27,6 +28,7 @@ class Route extends \Illuminate\Routing\Route {
 		return	Str::finish( config(  $key), $this->divider ). (Str::contains($this->packageNamespace, '\\Auth') ? '\\' . (Route::isWebRoute() ? 'Website' : 'Admin') : '');
 	}
 
+
 	/**
 	 * @return mixed
 	 * @throws \Illuminate\Contracts\Container\BindingResolutionException
@@ -37,7 +39,7 @@ class Route extends \Illuminate\Routing\Route {
 
 		$isArchive = false;
 
-		if(!Str::contains($this->getAction('uses'), 'Auth')){
+		if(request()->locale && !Str::contains($this->getAction('uses'), 'Auth')){
 
 		if(1==1 || $this->controller){
 
@@ -62,10 +64,9 @@ class Route extends \Illuminate\Routing\Route {
 
 				//$class = str_replace('Archive', $archiveName,$class);
 
-			}/* else {
+			} else {
 
-				$parentsClass = class_parents($class);
-			}*/
+			}
 			/*if($class == 'Workhouse\Archives\Controllers\Website\InspirationController'){
 				dd($class);
 			}*/
@@ -95,7 +96,6 @@ class Route extends \Illuminate\Routing\Route {
                 str_replace('wh1110000\CmsL8', 'App', $this->appNamespace('general.controller_namespace')),
                 $this->packageNamespace . $this->divider
             ] as $namespace){
-                
 
             $namespace = $namespace . (Str::contains($class, '\\Website') ? 'Website' : 'Admin') . $this->divider;
 
@@ -138,9 +138,11 @@ class Route extends \Illuminate\Routing\Route {
 						$repository->_package = lcfirst(Str::before(implode('',array_map('ucfirst', explode('-', $repository->package))), '\\'));
 					}
 
+
 					if(Str::contains(Str::lower($repositoryName), ['category', 'categories'])){
 
 						$repository->package  = Str::finish($repository->package, '-category');
+
 					}
 
 
@@ -223,15 +225,26 @@ class Route extends \Illuminate\Routing\Route {
 		if(isset($repository)){
 
 
+
+
 			if($isArchive){
 
 				$repository->package = 'archive';
 
 				$repository->view = '::archive';
-			}
-			/*if($repository->package == 'product'){
-				$repository->view = '::index';
-			}*/
+
+			} elseif(Str::contains($repository->_package, 'archive')){
+
+                $repository->routePrefix = str_replace('archive', 'inspiration', $repository->routePrefix);
+                $repository->route = str_replace('archive', 'inspiration', $repository->route);
+                $repository->package = 'inspiration';
+                $repository->model->setTable(str_replace('archive', 'inspiration', $repository->model->getTable())) ;
+
+            }
+
+            /*if($repository->package == 'product'){
+                $repository->view = '::index';
+            }*/
 
 			$page = isset($repository->model) && $repository->model instanceof \Page ? $repository->model : (new \Page)->where('package', $repository->package)->where('type', Str::after($repository->view, '::'))->first();
 

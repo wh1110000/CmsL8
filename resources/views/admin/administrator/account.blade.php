@@ -1,6 +1,6 @@
 @extends('admin::admin')
 
-@section('title', __('administrators::general.my_account'))
+@section('title', __('core::general.my_account'))
 
 @section('content')
 

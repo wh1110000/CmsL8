@@ -1,6 +1,6 @@
 @extends('admin::translate')
 
-@section('title', __('multilanguage::general.language') . ' - ' . $post->getName())
+@section('title', __('core::general.language') . ' - ' . $post->getName())
 
 @section('content')
 

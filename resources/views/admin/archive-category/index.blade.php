@@ -1,3 +1,3 @@
 @extends('admin::default')
 
-@section('title', $repository->model->getPostTypeLabel())
+@section('title', 'Categories')

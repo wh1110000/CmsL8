@@ -38,14 +38,14 @@ class Product extends \wh1110000\CmsL8\Models\Product {
 			->setRoute($route.'index')
 			->setColumns([
 			   'name' => [
-			       'title' => __('products::fields.name'),
+			       'title' => __('core::fields.name'),
 			       'width' => 50,
 			       'filter' => [
 			           'type' => 'text',
 			       ],
 			   ],
 			   'sku' => [
-			       'title' => __('products::fields.sku'),
+			       'title' => __('core::fields.sku'),
 			       'width' => 30,
 			       'filter' => [
 			           'type' => 'text',
@@ -75,21 +75,21 @@ class Product extends \wh1110000\CmsL8\Models\Product {
 
 		$row = \Row::init()
 			->addCol(6)
-			->addSection(__('cms::general.basic'))
-			->addField(\Fields::text('name', __('products::fields.name'))->add())
-			->addField(\Fields::text('sku', __('products::fields.sku'))->add())
-			->addField(\Fields::editor('short_description', __('products::fields.short_description'))->add())
-			->addField(\Fields::editor('description', __('products::fields.description'))->add())
-			->addField(\Fields::file('thumbnail', __('products::fields.thumbnail'))->add())
-			->addSection(__('products::general.checkout'))
-			->addField(\Fields::text('order_product', __('products::fields.order_product'))->add())
-			->addField(\Fields::text('order_sample', __('products::fields.order_sample'))->add())
+			->addSection(__('core::general.basic'))
+			->addField(\Fields::text('name', __('core::fields.name'))->add())
+			->addField(\Fields::text('sku', __('core::fields.sku'))->add())
+			->addField(\Fields::editor('short_description', __('core::fields.short_description'))->add())
+			->addField(\Fields::editor('description', __('core::fields.description'))->add())
+			->addField(\Fields::file('thumbnail', __('core::fields.thumbnail'))->add())
+			->addSection(__('core::general.checkout'))
+			->addField(\Fields::text('order_product', __('core::fields.order_product'))->add())
+			->addField(\Fields::text('order_sample', __('core::fields.order_sample'))->add())
 			->addCol(6)
-			->addSection(__('products::general.categories'))
-			->addField(\Fields::multiselect('categories[]', __('products::fields.categories'))->values($categories)->selected($this->categories()->pluck('product_categories.id', 'product_categories.title'))->add())
-			->addSectionWhen($this->exists, __('cms::general.logs'))
-			->addField(\Fields::text('created_at', __('products::fields.created_at'))->disabled()->add())
-			->addField(\Fields::text('updated_at', __('products::fields.updated_at'))->disabled()->add());
+			->addSection(__('core::general.categories'))
+			->addField(\Fields::multiselect('categories[]', __('core::fields.categories'))->values($categories)->selected($this->categories()->pluck('product_categories.id', 'product_categories.title'))->add())
+			->addSectionWhen($this->exists, __('core::general.logs'))
+			->addField(\Fields::text('created_at', __('core::fields.created_at'))->disabled()->add())
+			->addField(\Fields::text('updated_at', __('core::fields.updated_at'))->disabled()->add());
 
 
 		return $row;
@@ -102,8 +102,8 @@ class Product extends \wh1110000\CmsL8\Models\Product {
 
 		$row = \Row::init()
 		    ->addCol(6)
-			->addSection(__('products::fields.crossSells'))
-			->addField(\Fields::multiselect('crossSells[]', __('products::fields.crossSells'))->values($this->where('id', '!=', $this->getId())->pluck('name', 'id'))->selected($this->crossSells()->pluck((new \Product)->getTable().'.id', (new \Product)->getTable().'.name'))->add());
+			->addSection(__('core::fields.crossSells'))
+			->addField(\Fields::multiselect('crossSells[]', __('core::fields.crossSells'))->values($this->where('id', '!=', $this->getId())->pluck('name', 'id'))->selected($this->crossSells()->pluck((new \Product)->getTable().'.id', (new \Product)->getTable().'.name'))->add());
 
 		return $row;
 	}

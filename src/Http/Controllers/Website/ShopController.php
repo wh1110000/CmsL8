@@ -41,8 +41,6 @@ class ShopController extends Controller {
 
 		$data = array_merge(['page' => request()->get('currentPage')], $this->repository->getMap($results));
 
-
-
 		return view('shop::map', $data);
 	}
 }

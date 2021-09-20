@@ -1,6 +1,6 @@
 @extends('admin::admin')
 
-@section('title', __('cms::general.roles'))
+@section('title', __('core::general.roles'))
 
 @section('navigation')
 

@@ -1,6 +1,6 @@
 @extends('admin::translate')
 
-@section('title', __('cms::general.administrator'))
+@section('title', __('core::general.administrator'))
 
 @section('navigation')
 

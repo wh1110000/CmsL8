@@ -37,11 +37,10 @@ class ComponentsServiceProvider extends AbstractServiceProvider {
 
 		parent::loadViews();
 
-		
-		$this->loadViewsFrom( __DIR__ . '/../../resources/views/DataTable/', 'datatable' );
-		$this->loadViewsFrom( __DIR__ . '/../../resources/views/CookiePolicy/', 'cookiePolicy' );
-		$this->loadViewsFrom( __DIR__ . '/../../resources/views/Modal/', 'modal' );
-		$this->loadViewsFrom( __DIR__ . '/../../resources/views/Widget/', 'widget' );
+		$this->loadViewsFrom( $this->dir('/resources/views/DataTable/'), 'datatable' );
+		$this->loadViewsFrom( $this->dir('/resources/views/CookiePolicy/'), 'cookiePolicy' );
+		$this->loadViewsFrom($this->dir('/resources/views/Modal/'), 'modal' );
+		$this->loadViewsFrom( $this->dir('/resources/views/Widget/'), 'widget' );
 
 
 		//$this->loadViewsFrom( $this->dir . '/resources/views/blocks/', 'blocks' );

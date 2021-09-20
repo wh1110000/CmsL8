@@ -1,6 +1,6 @@
 @extends('admin::translate')
 
-@section('title', __('cms::general.'.($post->getType() ?: 'internal') ). ($post->exists ? ' - ' . $post->getTitle() : ''))
+@section('title', __('core::general.'.($post->getType() ?: 'internal') ). ($post->exists ? ' - ' . $post->getTitle() : ''))
 
 @section('navigation')
 

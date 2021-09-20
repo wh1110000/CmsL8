@@ -1,3 +1,3 @@
 @extends('admin::default')
 
-@section('title', $repository->model->getPostTypeLabel() . ' - ' .(__('articles::general.posts')))
+@section('title', (__('core::general.posts')))

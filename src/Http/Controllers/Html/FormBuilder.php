@@ -346,7 +346,7 @@ class FormBuilder extends \Collective\Html\FormBuilder {
 
 		$options['type'] = 'submit';
 
-		return parent::button($value ?: __('cms::general.save'), array_filter($options));
+		return parent::button($value ?: __('core::general.save'), array_filter($options));
 	}
 
 	/**

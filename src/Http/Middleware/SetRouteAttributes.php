@@ -29,10 +29,11 @@ class SetRouteAttributes {
 
 		} else { //Website
 
-			//$repository = new BaseWebRepository();
+			$repository = new BaseWebRepository();
 
 			//Route::setRepository($repository->getRepository());
 
+			//dd($repository->getPage());
 			//$request->attributes->add(['currentPage' => $repository->getPage()]);
 
 			//$request->attributes->add(['currentPost' => $repository->getPost()]);

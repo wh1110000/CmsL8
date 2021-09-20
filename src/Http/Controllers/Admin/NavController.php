@@ -5,8 +5,8 @@ namespace wh1110000\CmsL8\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use wh1110000\CmsL8\Models\Presenters\Nav;
 use wh1110000\CmsL8\Models\Presenters\NavPage;
-use wh1110000\CmsL8\Requests\Admin\Modal\NavRequest;
-use wh1110000\CmsL8\Requests\Admin\Modal\PageRequest;
+use wh1110000\CmsL8\Http\Requests\Admin\Modal\NavRequest;
+use wh1110000\CmsL8\Http\Requests\Admin\Modal\PageRequest;
 
 /**
  * Class NavController

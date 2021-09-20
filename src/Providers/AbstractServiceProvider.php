@@ -129,6 +129,7 @@ abstract class AbstractServiceProvider extends ServiceProvider {
 			$this->package = lcfirst(implode('', array_filter(preg_split('/(?=[A-Z])/', Str::after($this->namespace, '\\')))));
 		}
 
+
 		if($this->package == 'archives') {
 
 			$this->namespace = Str::beforeLast(config( 'general.controller_namespace' ), '\\');
@@ -287,9 +288,10 @@ abstract class AbstractServiceProvider extends ServiceProvider {
 
 	public function getModelNamespace($name) {
 
+
 		foreach ([
 			config( 'general.model_namespace' ),
-			$this->namespace . '\\Presenters\\',
+			$this->namespace . '\\Models\\Presenters\\',
 			$this->namespace . '\\Models\\'
 		] as $_namespace ) {
 

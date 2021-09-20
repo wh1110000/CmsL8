@@ -1,6 +1,6 @@
 @extends('admin::default')
 
-@section('title', __('shops::general.shops'))
+@section('title', __('core::general.shops'))
 
 @section('navigation')
 

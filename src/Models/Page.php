@@ -227,7 +227,7 @@ class Page extends BaseModel {
 	/*public function valuesForm(){
 
 		$this->row->addCol(12)
-	       ->addSection(__('cms::general.banner444'))
+	       ->addSection(__('core::general.banner444'))
 	       ->addField(\Fields::repeater('sectors', ['text' => 'title', 'editor' => 'description']));
 	}*/
 

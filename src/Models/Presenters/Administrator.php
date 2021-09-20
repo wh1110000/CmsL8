@@ -22,7 +22,7 @@ class Administrator extends AdministratorModel {
 			->setRoute('admin.administrator.index')
 			->setColumns([
 			   'name' => [
-			       'title' => __('cms::general.name'),
+			       'title' => __('core::general.name'),
 			       'width' => 25,
 			       'filter' => [
 			           'type' => 'text',
@@ -32,14 +32,14 @@ class Administrator extends AdministratorModel {
 			       ],
 			   ],
 			   'email' => [
-			       'title' => __('cms::general.email'),
+			       'title' => __('core::general.email'),
 			       'width' => 25,
 			       'filter' => [
 			           'type' => 'text',
 			       ],
 			   ],
 			   'roles' => [
-			       'title' => __('cms::general.name'),
+			       'title' => __('core::general.name'),
 			       'width' => 25,
 			       'filter' => [
 			           'type' => 'select',
@@ -75,7 +75,7 @@ class Administrator extends AdministratorModel {
 
 		$row = \Row::init()
 			->addCol(6)
-			->addSection(__('cms::general.account_details'))
+			->addSection(__('core::general.account_details'))
 			->addField([
 				\Fields::text('first_name')->add(),
 				\Fields::text('last_name')->add()
@@ -84,8 +84,8 @@ class Administrator extends AdministratorModel {
 
 		if(Str::contains(\Route::currentRouteName(), ['account'])){
 
-			$row->addSectionWhen(Str::contains(\Route::currentRouteName(), ['account']), __('cms::general.change_password'))
-			    ->addField('<small class="d-block">'. ( __("cms::general.change_your_password" ) ) . '</small>')
+			$row->addSectionWhen(Str::contains(\Route::currentRouteName(), ['account']), __('core::general.change_password'))
+			    ->addField('<small class="d-block">'. ( __("core::general.change_your_password" ) ) . '</small>')
 			    ->addField(\Fields::password('current_password')->add())
 			    ->addField(\Fields::password('new_password')->add())
 			    ->addField(\Fields::password('new_password_confirmation')->add());
@@ -93,12 +93,12 @@ class Administrator extends AdministratorModel {
 		} else {
 
 			if($this->exists){
-				$row->addSection(__('cms::general.change_password'))
-				    ->addField('<a href="'.route('admin.administrator.password.email', $this).'" class="btn btn-warning btn-alert">'. __('cms::general.send_new_password').'</a>');
+				$row->addSection(__('core::general.change_password'))
+				    ->addField('<a href="'.route('admin.administrator.password.email', $this).'" class="btn btn-warning btn-alert">'. __('core::general.send_new_password').'</a>');
 			}
 
 			$row->addCol(6)
-			    ->addSection(__('cms::general.roles'))
+			    ->addSection(__('core::general.roles'))
 			    ->addField(\Fields::select('role')->values(\Role::all()->pluck('name', 'id'))->add());
 		}
 

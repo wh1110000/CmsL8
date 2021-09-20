@@ -33,7 +33,7 @@ class Language extends \wh1110000\CmsL8\Models\Language {
 			->setRoute($route.'index')
 			->setColumns([
 			   'name' => [
-			       'title' => __('cms::general.name'),
+			       'title' => __('core::general.name'),
 			       'filter' => [
 			           'type' => 'text',
 			       ],
@@ -58,7 +58,7 @@ class Language extends \wh1110000\CmsL8\Models\Language {
 
 		return \Row::init()
 			->addCol(6)
-			->addSection(__('cms::general.basic'))
+			->addSection(__('core::general.basic'))
 			->addField(\Fields::text('title')->add());
 	}
 }

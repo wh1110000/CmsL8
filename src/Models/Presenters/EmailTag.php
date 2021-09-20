@@ -32,7 +32,7 @@ class EmailTag extends BaseModel {
 			->setRoute($route.'index')
 			->setColumns([
 				'tag' => [
-			        'title' =>  __('contact::fields.tag'),
+			        'title' =>  __('core::fields.tag'),
 			        'width' => 85,
 			        'filter' => [
 			            'type' => 'text',
@@ -58,7 +58,7 @@ class EmailTag extends BaseModel {
 
 		return \Row::init()
 			->addCol(12)
-			->addSection(__('cms::general.basic'))
-			->addField(\Fields::text('tag', __('contact::fields.tag'))->add());
+			->addSection(__('core::general.basic'))
+			->addField(\Fields::text('tag', __('core::fields.tag'))->add());
 	}
 }

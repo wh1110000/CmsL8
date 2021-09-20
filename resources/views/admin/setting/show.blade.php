@@ -1,1 +1,1 @@
-@extends('admin::default')@section('title', __($namespace . '::general.settings'))
+@extends('admin::default')@section('title', __('core::general.settings'))

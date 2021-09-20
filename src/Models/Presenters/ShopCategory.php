@@ -2,7 +2,7 @@
 
 namespace wh1110000\CmsL8\Models\Presenters;
 
-use wh11100001906\Shops\Models\ShopCategory as BaseModel;
+use wh1110000\CmsL8\Models\ShopCategory as BaseModel;
 
 /**
  * Class ShopCategory
@@ -31,7 +31,7 @@ class ShopCategory extends BaseModel {
 			->setRoute('admin.shop-category.index')
 			->setColumns([
 				'title'      => [
-					'title'  => __('cms::general.title'),
+					'title'  => __('core::general.title'),
 					'width'  => 65,
 					'filter' => [
 						'type' => 'text'

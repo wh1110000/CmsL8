@@ -1,6 +1,6 @@
 @extends('admin::admin')
 
-@section('title', __('media::general.media'))
+@section('title', __('core::general.media'))
 
 @section('navigation')
 

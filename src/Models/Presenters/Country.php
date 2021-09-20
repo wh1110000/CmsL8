@@ -21,7 +21,7 @@ class Country extends \wh1110000\CmsL8\Models\Country {
 			->setRoute($route.'index')
 			->setColumns([
 			   'name' => [
-			       'title' => __('cms::general.name'),
+			       'title' => __('core::general.name'),
 			       'filter' => [
 			           'type' => 'text',
 			       ],
@@ -46,11 +46,11 @@ class Country extends \wh1110000\CmsL8\Models\Country {
 
 		return \Row::init()
 		           ->addCol(6)
-		           ->addSection(__('cms::general.basic'))
+		           ->addSection(__('core::general.basic'))
 		           ->addField(\Fields::text('title')->add())
 		           ->addField(\Fields::text('label')->add())
 		           ->addCol(6)
-		           ->addSection(__('cms::general.basic'))
+		           ->addSection(__('core::general.basic'))
 		           ->addField(\Fields::text('alpha2_code')->add())
 		           ->addField(\Fields::text('alpha3_code')->add())
 		           ->addField(\Fields::text('icon')->add());

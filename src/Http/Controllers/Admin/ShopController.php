@@ -3,8 +3,8 @@
 namespace wh1110000\CmsL8\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use wh11100001906\Shops\Presenters\Shop;
-use wh11100001906\Shops\Models\ShopOpeningHour;
+use wh1110000\CmsL8\Models\Presenters\Shop;
+use wh1110000\CmsL8\Models\ShopOpeningHour;
 
 /**
  * Class ShopController

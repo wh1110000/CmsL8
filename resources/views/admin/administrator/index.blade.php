@@ -1,3 +1,3 @@
 @extends('admin::default')
 
-@section('title', __('cms::general.administrators'))
+@section('title', __('core::general.administrators'))

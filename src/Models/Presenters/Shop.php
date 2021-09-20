@@ -57,7 +57,7 @@ class Shop extends BaseModel {
 			->setRoute('admin.shop.index')
 			->setColumns([
 			   'name' => [
-			       'title' => __('cms::general.name'),
+			       'title' => __('core::general.name'),
 			       'width' => 85,
 			       'filter' => [
 			           'type' => 'text',
@@ -96,14 +96,14 @@ class Shop extends BaseModel {
 
 		return \Row::init()
 			->addCol(6)
-			->addSection(__('cms::general.main_details'))
+			->addSection(__('core::general.main_details'))
 			->addField(\Fields::text('name')->add())
 			->addField(\Fields::phone('phone')->add())
 			->addField(\Fields::email('email')->add())
 			->addField(\Fields::editor('short_description')->add())
 			->addField(\Fields::editor('description')->add())
 			->addCol(6)
-			->addSection(__('cms::general.address'))
+			->addSection(__('core::general.address'))
 			->addField(\Fields::text('street')->add())
 			->addField(\Fields::text('street_extra')->add())
 			->addField([
@@ -112,9 +112,9 @@ class Shop extends BaseModel {
 			])
 			->addField(\Fields::text('county')->add())
 			->addField(\Fields::select('country_id')->values(\Country::pluck('label', 'id')->prepend('', ''))->selected($this->country_id)->add())
-			->addSection(__('cms::general.department'))
+			->addSection(__('core::general.department'))
 			->addField(\Fields::bool('department')->add())
-			->addSection(__('cms::general.categories'))
+			->addSection(__('core::general.categories'))
 			->addField($categories);
 
 	}
@@ -123,7 +123,7 @@ class Shop extends BaseModel {
 
 		return \Row::init()
 		           ->addCol(6)
-		           ->addSection(__('cms::general.main_details'))
+		           ->addSection(__('core::general.main_details'))
 		           ->addField(view('admin.shop::tabs.opening_hours')->with('post', $this)->render());
 
 	}*/
@@ -138,7 +138,7 @@ class Shop extends BaseModel {
 
 			return \Row::init()
 			           ->addCol(6)
-			           ->addSection(__('cms::general.main_details'))
+			           ->addSection(__('core::general.main_details'))
 			           ->addField(view('admin.shop::tabs.testimonials')->with('testimonials', $testimonials)->render());
 		}
 

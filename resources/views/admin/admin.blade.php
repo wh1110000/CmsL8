@@ -216,15 +216,15 @@
 
                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                        <a class="dropdown-item" href="{{ route('admin.account.index') }}">
-                           <i class="fas fa-user"></i> {{ __('administrators::general.my_account') }}
+                           <i class="fas fa-user"></i> {{ __('core::general.my_account') }}
                        </a>
 
                        <a class="dropdown-item" href="{{-- route('page.homepage') --}}">
-                           <i class="fas fa-location-arrow"></i> {{ __('cms::general.go_to_website') }}
+                           <i class="fas fa-location-arrow"></i> {{ __('core::general.go_to_website') }}
                        </a>
 
                        <a class="dropdown-item logout" href="{{ route('admin.auth.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                           <i class="fas fa-sign-out-alt"></i> {{ __('administrators::general.logout') }}
+                           <i class="fas fa-sign-out-alt"></i> {{ __('core::general.logout') }}
                        </a>
                    </div>
                </div>

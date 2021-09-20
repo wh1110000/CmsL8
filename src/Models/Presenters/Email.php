@@ -21,12 +21,12 @@ class Email extends BaseModel {
 			->addCol(12)
 			->addSection()
 			->addField([
-				\Fields::text('first_name', __('contact::fields.first_name') )->add(),
-				\Fields::text('last_name', __('contact::fields.last_name'))->add()
+				\Fields::text('first_name', __('core::fields.first_name') )->add(),
+				\Fields::text('last_name', __('core::fields.last_name'))->add()
 			])
-			->addField(\Fields::email('email', __('contact::fields.email'))->add())
-			->addField(\Fields::phone('phone', __('contact::fields.phone'))->add())
-			->addField(\Fields::textarea('enquiry',  __('contact::fields.enquiry'))->add());
+			->addField(\Fields::email('email', __('core::fields.email'))->add())
+			->addField(\Fields::phone('phone', __('core::fields.phone'))->add())
+			->addField(\Fields::textarea('enquiry',  __('core::fields.enquiry'))->add());
 
 		return $row;
 	}
@@ -76,14 +76,14 @@ class Email extends BaseModel {
              ->setRoute(route($route.'index', ['type' => $type]))
              ->setColumns([
                  'email' => [
-	                 'title' => __('contact::fields.email'),
+	                 'title' => __('core::fields.email'),
 	                 'width' => 20,
 	                 'filter' => [
 		                 'type' => 'text',
 	                 ],
                  ],
                  'subject' => [
-	                 'title' => __('contact::fields.subject'),
+	                 'title' => __('core::fields.subject'),
 	                 'width' => 20,
 	                 'filter' => [
 		                 'type' => 'text',

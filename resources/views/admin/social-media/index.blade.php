@@ -1,3 +1,3 @@
 @extends('admin::default')
 
-@section('title', __($namespace . '::general.social_media'))
+@section('title', __('core::general.social_media'))

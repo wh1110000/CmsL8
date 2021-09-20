@@ -1,6 +1,6 @@
 @extends('admin.shop::show')
 
-@section('title', __('shops::general.store_details'))
+@section('title', __('core::general.store_details'))
 
 @section('tab')
 

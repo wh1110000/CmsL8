@@ -2,7 +2,7 @@
 
 namespace wh1110000\CmsL8\Http\Requests\Admin;
 
-use wh1110000\CmsL8\Requests\GeneralRequest;
+use wh1110000\CmsL8\Http\Requests\GeneralRequest;
 
 /**
  * Class ShopRequest

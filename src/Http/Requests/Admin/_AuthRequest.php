@@ -1,6 +1,6 @@
 <?php
 
-namespace wh11100001906\Administrator\Requests\Admin;
+namespace wh1110000\CmsL8\Http\Requests\Admin;
 
 use wh1110000\CmsL8\Models\Role;
 

@@ -1,4 +1,4 @@
-<x-modal :title="( __('multilanguage::general.countries'))" :result="$result">
+<x-modal :title="( __('core::general.countries'))" :result="$result">
 
     <x-slot name="resultSlot">
 

@@ -8,6 +8,7 @@ use Spatie\Permission\Traits\HasRoles;
 use wh1110000\CmsL8\Notifications\NewPasswordNotification;
 use wh1110000\CmsL8\Traits\Contact;
 use wh1110000\CmsL8\Traits\ModelHelper;
+use wh1110000\CmsL8\Traits\Multilanguage;
 use wh1110000\CmsL8\Traits\User;
 
 /**
@@ -17,7 +18,7 @@ use wh1110000\CmsL8\Traits\User;
 
 class Administrator extends Authenticatable {
 
-    use Notifiable, User, Contact, HasRoles, ModelHelper;
+    use Notifiable, User, Contact, HasRoles, ModelHelper, Multilanguage, \wh1110000\CmsL8\Traits\Seo;
 
 	/**
 	 * @var array

@@ -24,7 +24,7 @@ class PageRepository extends AdminRepository {
 
 			if($this->model->isType('global')){
 
-				throw new \Exception(__('cms::general.cant_delete_global_pages'));
+				throw new \Exception(__('core::general.cant_delete_global_pages'));
 			}
 
 			return $this->model->delete();

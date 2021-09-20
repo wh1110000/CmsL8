@@ -22,6 +22,7 @@
         </div>
 
         <div class="col-md-6">
+
             {{ Form::model($file, ['route' => ['admin.media.edit.modal', $file], 'method' => 'POST', 'data-async']) }}
 
                 {{ Form::fields() }}
@@ -41,7 +42,7 @@
 
     <x-slot name="buttons">
         @if(!$result)
-            <button type="button" class="btn btn-success  submit-modal text-white" data-action="add" data-style="zoom-in">{{ __('cms::general.save') }}</button>
+            <button type="button" class="btn btn-success  submit-modal text-white" data-action="add" data-style="zoom-in">{{ __('core::general.save') }}</button>
         @endif
     </x-slot>
 
