@@ -203,8 +203,8 @@
     <header class="admin">
        <nav>
            <a href="{{ route('admin.dashboard.index') }}" class="logo-wrapper">
-               <img src="{{ app('SettingsManager')->get('BRAND_LOGO') ?: 'https://workhousemarketing.com//content/themes/workhouse/dist/images/logo-black.svg' }}" class="logo" alt="{{ config('app.name') }} logo">
-           </a>
+             <img src="{{ app('SettingsManager')->get('BRAND_LOGO') ? app('SettingsManager')->get('BRAND_LOGO')->getFile() : 'https://workhousemarketing.com//content/themes/workhouse/dist/images/logo-black.svg' }}" class="logo" alt="{{ config('app.name') }} logo">
+             </a>
 
            <div class="user-menu">
                <div class="dropdown">
